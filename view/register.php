@@ -11,8 +11,8 @@
         <script src="../dist/js/bootstrap.js"></script>
 
 	</head>
-    <body class="bg">
-        <!-- ADD NAVBAR -->
+<body class="bg">
+	<!-- ADD NAVBAR -->
         <?php
             include "../layout/navbar.html";
         ?>
@@ -22,28 +22,27 @@
                 <div class="col-md-4 col-xs-4 col-sm-12" ></div>
                 <div class="col-md-4 col-xs-4 col-sm-12">
                     <form id="formlogin" action="../config/login_proc.php" method="POST">
-                        <h2 style="text-align: center;">Login</h1>
-                        <hr>
+                        <h2 style="text-align: center;">Create Account</h1>
+                        	<hr>
+                        <div class="form-group">
+                        	<label for="email">E-mail</label>
+                        	<input type="email" class="form-control" name="email" placeholder="Enter E-mail" id="email">
+                        </div>
                         <div class="form-group">      
                                 <label for="username"> Username </label> 
                                 <input type="text" class="form-control" name="user" placeholder="Enter Username" id="username">
                         </div>
                         <div class="form-group">
                             <label for="Password">Password</label>
-                                <input type="Password" class="form-control" name="pass" id="pass" placeholder="Enter Password"> 
-                            <div class="form-check mb-2 mr-sm-2">
-                                <label class="form-check-label">
-                                <input class="form-check-input "type="checkbox"> Remember me
-                                </label>
-                            </div>  
+                                <input type="Password" class="form-control" name="pass" id="pass" placeholder="Enter Password">  
                         </div>
-                        <button type="submit" class="btn btn-success btn-block" name="submit">Log in</button>
-                        Didn't have an account ? <a href="../view/register.php">Create One.</a>
+                        <button type="submit" class="btn btn-success btn-block " name="submit">Create</button>
+                        Alerady have an account ? <a href="../view/login.php">Log in.</a>
                         <hr>
                     </form>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-12"></div>
             </div>
         </div>       
-    </body>
+</body>
 </html>

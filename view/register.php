@@ -21,7 +21,7 @@
             <div class="row">  
                 <div class="col-md-4 col-xs-4 col-sm-12" ></div>
                 <div class="col-md-4 col-xs-4 col-sm-12">
-                    <form id="formlogin" action="../config/login_proc.php" method="POST">
+                    <form id="formlogin" action="../config/regis_proc.php" method="POST">
                         <h2 style="text-align: center;">Create Account</h1>
                         	<hr>
                         <div class="form-group">
@@ -36,7 +36,7 @@
                             <label for="Password">Password</label>
                                 <input type="Password" class="form-control" name="pass" id="pass" placeholder="Enter Password">  
                         </div>
-                        <button type="submit" class="btn btn-success btn-block " name="submit">Create</button>
+                        <button type="submit" class="btn btn-success btn-block " name="btn_create">Create</button>
                         Alerady have an account ? <a href="../view/login.php">Log in.</a>
                         <hr>
                     </form>

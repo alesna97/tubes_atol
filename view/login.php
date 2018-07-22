@@ -37,7 +37,7 @@
                                 </label>
                             </div>  
                         </div>
-                        <button type="submit" class="btn btn-success btn-block" name="submit">Log in</button>
+                        <button type="submit" class="btn btn-success btn-block" name="btn_login">Log in</button>
                         Didn't have an account ? <a href="../view/register.php">Create One.</a>
                         <hr>
                     </form>

@@ -18,33 +18,33 @@
                     <h3>Sistem Kepegawaian</h3>
                 </div>
                 <ul class="list-unstyled components">
-                    <p> Dummy </p>
+                    <p> Admin </p>
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Home </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="#">MENU 1</a></li>
-                            <li><a href="#">MENU 2</a></li>
-                            <li><a href="#">MENU 3</a></li>
+                            <li><a href="#">Data Pegawai</a></li>
+                            <li><a href="#">Data Gaji</a></li>
+                            <li><a href="#">Data Absensi</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">MENU 1</a></li>
-                            <li><a href="#">MENU 2</a></li>
-                            <li><a href="#">MENU 3</a></li>
+                            <li><a href="#">Menu 1</a></li>
+                            <li><a href="#">Menu 2</a></li>
+                            <li><a href="#">Menu 3</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"> MENU </a>
+                        <a href="#"> About </a>
                     </li>
                     <li>
-                        <a href="#"> MENU </a>
+                        <a href="#"> Setting </a>
                     </li>
                 </ul>
             </nav>
             <div id="content">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div class="container-fluid">
                         <button type="button" id="sidebarCollapse" class="btn btn-success">
                             <i class="fas fa-align-left"></i>
@@ -66,12 +66,18 @@
                                 <a class="nav-link" href="#">menu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">menu</a>
+                                <a class="nav-link" href="../index.php">Log out</a>
                             </li>
                         </ul>
                     </div>
                     </div>
                 </nav>  
+                    <!-- CONTENT BODY -->
+                    <?php
+                        include "../view/pegawai.php";
+                    ?>
+                    <!-- END -->
+                </div>
             </div>
         </div>
 

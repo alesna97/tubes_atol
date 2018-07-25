@@ -1,17 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link rel="stylesheet" href="../dist/css/bootstrap.css">
-        <link rel="stylesheet" href="../dist/css/style.css">
-        <script src="../dist/js/jquery.js"></script>
-        <script src="../dist/js/bootstrap.js"></script>
-
-	</head>
-<body>
+<?php
+    include_once "../header.php";
+?>
 	<div class="container-fluid">
         <div class="row">
             <table class="table">
@@ -36,5 +25,6 @@
             </table>
         </div>
     </div>
-</body>
-</html>
+<?php
+    include_once "../footer.php";
+?>

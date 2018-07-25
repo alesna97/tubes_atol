@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="../dist/css/bootstrap.css">
-        <link rel="stylesheet" href="../dist/css/style.css">
-        <script src="../dist/js/jquery.js"></script>
-        <script src="../dist/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="../asset/css/bootstrap.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../asset/js/jquery.js"></script>
+        <script src="../asset/js/bootstrap.js"></script>
 
     </head>
 <body style="background: url('../dist/images/grey.jpg'); background-size: cover" >

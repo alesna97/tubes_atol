@@ -6,7 +6,7 @@
 		$email = mysqli_real_escape_string($conn,$_POST['email']);
 		$username = mysqli_real_escape_string($conn,$_POST['user']);
 		//ENKRIPSI PASSWORD
-		$pass = md5($_POST['pass']);
+		$pass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
 
 		//INPUT DATABASE
 		if (($email!='') && ($username!='') && ($pass!='')){

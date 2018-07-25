@@ -10,7 +10,7 @@
             			<th>Nama</th>
             			<th>Jabatan</th>
             			<th>Alamat</th>
-            			<th>Action</th>
+            			<th>Aksi</th>
             		</tr>
             		<tbody>
             			<th>Test</th>

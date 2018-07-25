@@ -21,7 +21,7 @@
             <div class="row">  
                 <div class="col-md-4 col-xs-4 col-sm-12" ></div>
                 <div class="col-md-4 col-xs-4 col-sm-12">
-                    <form id="formlogin" action="../config/login_proc.php" method="POST">
+                    <form id="formlogin" action="../config/login_proc.php" method="POST" target="_SELF">
                         <h2 style="text-align: center;">Login</h1>
                         <hr>
                         <div class="form-group">      

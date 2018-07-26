@@ -1,12 +1,9 @@
 /*
     Layout Style
 */
-.bg{
-    background: #f7f7f7; 
-}
 
-.bgwelcome{
-    background: url('../dist/images/grey.jpg'); 
+.bg{
+    background: url('../asset/images/grey.jpg'); 
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -75,8 +72,8 @@ a:focus {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #373e44;
-    color: #fff;
+    background: black; /* COLOR */
+    color: #f8f9fa;
     transition: all 0.3s;
 }
 
@@ -86,16 +83,16 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #343a40;
+    background: black; /* COLOR */
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #343a40;
+    border-bottom: 1px solid black; /* COLOR */
 }
 
 #sidebar ul p {
-    color: #fff;
+    color: #f8f9fa;;
     padding: 10px;
 }
 
@@ -106,32 +103,32 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #343a40;
-    background: #fff;
+    color: black;
+    background: grey;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #343a40;
+    color: #f8f9fa;
+    background: black; /* COLOR */
 }
 
 a[data-toggle="collapse"] {
     position: relative;
 }
 
-.dropdown-toggle::after {
+.dropdown-toggle::after{
     display: block;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 10px;
     transform: translateY(-50%);
 }
 
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #373e44;
+    background: black;
 }
 
 ul.CTAs {
@@ -146,10 +143,6 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
 
 a.article,
 a.article:hover {
@@ -196,15 +189,6 @@ a.article:hover {
         display: none;
     }
 }
-/*
-    Form Style
-*/
-#formlogin{
-    border: 1px grey solid;
-    border-radius: 25px;
-    padding:50px 80px 50px 80px;
-    margin-top: 10px;
-}
 
 /*
     Column Style
@@ -213,4 +197,7 @@ a.article:hover {
     margin-top: 250px;
     padding: 20px 20px 20px 20px;
 
+}
+.btn-rounded{
+    border-radius: 25px;
 }

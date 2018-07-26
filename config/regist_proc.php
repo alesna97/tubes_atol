@@ -1,6 +1,6 @@
 <?php
 	require_once "conn_db.php";
-
+	require_once "validasi.php";
 	if (isset($_POST['btn_create'])){	
 		//FILTER DATA
 		$email = mysqli_real_escape_string($conn,$_POST['email']);
@@ -14,7 +14,7 @@
 		$res = mysqli_query($conn,$sql);
 		header('location:../view/login.php');
 		}else{
-			echo "FIELD MASIH KOSONG";
+		header('location:../view/register.php');
 		}
 	}
 ?>

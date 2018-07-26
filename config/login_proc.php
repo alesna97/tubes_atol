@@ -1,6 +1,6 @@
 <?php
 	require_once"conn_db.php";
-		
+	
 		if(isset($_POST['btn_login'])){
 			$username = mysqli_real_escape_string($conn,$_POST['user']);
 			$pass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
@@ -15,8 +15,10 @@
 			$_SESSION['status'] = "login";
 			header("location:../view/dashboard.php");
 			}else{
-				echo "GAGAL LOGIN !";
-				header("location:../view/login.php");
+				//echo "GAGAL LOGIN !";
+				echo "<script type='text/javascript'>
+						alert('Username atau password tidak ditemukan !');
+					  </script>";
 			}
 		}
 		

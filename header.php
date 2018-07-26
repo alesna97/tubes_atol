@@ -4,14 +4,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        
         <link rel="stylesheet" href="../asset/css/bootstrap.css">
-        <link rel="stylesheet" href="../asset/css/style.css">
-        <script src="../asset/js/jquery.js"></script>
-        <script src="../asset/js/bootstrap.js"></script>
-
+        <link rel="stylesheet" href="../asset/css/style1.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script src="../asset/js/popper.min.js"></script>
+        <script src="../asset/js/bootstrap.min.js"></script>
 	</head>
-<body class="bg"> 
+<body style="background-color: #f8f9fa;"> 
         <div class="wrapper">
             <nav id="sidebar">
                 <div class="sidebar-header">
@@ -46,7 +46,7 @@
             <div id="content">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div class="container-fluid">
-                        <button type="button" id="sidebarCollapse" class="btn btn-success">
+                        <button type="button" id="sidebarCollapse" class="btn btn-light">
                             <i class="fas fa-align-left"></i>
                             <span>Toggle Sidebar</span>
                        </button>
@@ -56,17 +56,12 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">menu</a>
+                            <li class="nav-item"><input type="text" class="form-control" name="search" placeholder="Cari Data" id="search"></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Cari</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">menu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">menu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.php">Log out</a>
+                                <a class="nav-link" href="logout.php">Log out</a>
                             </li>
                         </ul>
                     </div>

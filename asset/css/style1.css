@@ -130,7 +130,7 @@ a[aria-expanded="true"] {
     background: #f8f9fa; /* COLOR */
 }
 
-a[data-toggle="collapse"] {
+#sidebar a[data-toggle="collapse"] {
     position: relative;
 }
 

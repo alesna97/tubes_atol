@@ -89,16 +89,8 @@
                                 <td><?= $fetchPegawai["nama"] ?></td>
                                 <td><?= $fetchPegawai["NIP"] ?></td>
                                 <td><?= $fetchPegawai["alamat"] ?></td>
-                                <td>
-                                    <form>
-                                        <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="checklist">
-                                        <label class="custom-control-label" for="customCheck">.</label>
-                                        </div>
-                                    </form>
-                                </td>
-                                <td><a href="#"> Edit </a>
-                                    <a href="#"> Detil </a>
+                                <td><a href="#"> Ubah </a>
+                                <a href="../function/hapus_pegawai.php?NIP=<?= $fetchPegawai['NIP']?>"> Hapus </a>
                                 </td>
                             </tr>
                         <?php } ?>

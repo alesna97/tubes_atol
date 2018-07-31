@@ -35,7 +35,7 @@
                                                 <h4 class="modal-title"> Tambah Data Pegawai </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="" name="" method="POST">
+                                                <form action="../function/tambah_pegawai.php" name="" method="POST">
                                                     <div class="form-group">
                                                         <label for="nama">ID :</label>
                                                         <input type="text" name="id" class="form-control" id="id">
@@ -47,7 +47,7 @@
                                                     <div class="form-group">
                                                         <label for="nama">Jabatan :</label>
                                                         <select name="jabatan" class="custom-select">
-                                                                <option> dummy </option>
+                                                                <option value="pilih_jabatan"> Pilih Jabatan </option>
                                                                 <option> dummy </option>
                                                                 <option> dummy </option>
                                                                 <option> dummy </option>
@@ -57,7 +57,7 @@
                                                         <label for="nama">Alamat :</label>
                                                         <input type="text" name="alamat" class="form-control" id="alamat">
                                                     </div>
-                                                    <button type="button" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_pegawai">Submit</button>
+                                                    <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_pegawai">Submit</button>
                                                     <button type="reset" class="btn btn-secondary btn-rounded btn-primary btn-block">Reset</button>
                                                 </form>
                                             </div>
@@ -91,23 +91,28 @@
                         <th>Aksi</th>
             		</tr>
             		<tbody>
-            			<td>00129</td>
-            			<td>Anjas Lesmana</td>
-            			<td>CEO</td>
-            			<td>Pungkur</td>
-                        <td>
-                            <form>
-                                <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck" name="checklist">
-                                <label class="custom-control-label" for="customCheck">.</label>
-                                </div>
-                            </form>
-                        </td>
-                        <td><a href="#"> Edit </a>
-                            <a href="#"> Detil </a>
-                        </td>
-                        <tr>
-                        
+                        <?php 
+                        $selectPegawai = "SELECT NIP, nama, alamat FROM pegawai";
+                        $getPegawai = mysqli_query($conn, $selectPegawai);
+                        while ($fetchPegawai = mysqli_fetch_array($getPegawai)) { ?>
+                            <tr>
+                                <td><?= $fetchPegawai["NIP"] ?></td>
+                                <td><?= $fetchPegawai["nama"] ?></td>
+                                <td><?= $fetchPegawai["NIP"] ?></td>
+                                <td><?= $fetchPegawai["alamat"] ?></td>
+                                <td>
+                                    <form>
+                                        <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="checklist">
+                                        <label class="custom-control-label" for="customCheck">.</label>
+                                        </div>
+                                    </form>
+                                </td>
+                                <td><a href="#"> Edit </a>
+                                    <a href="#"> Detil </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
             		</tbody>
             	</thead>
             	

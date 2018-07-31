@@ -57,7 +57,8 @@
                 </div>
             </div>
         <div class="row">
-            <table class="table table-striped">
+            <div class="table-responsive">
+            <table class="table table-striped" id="tables">
             	<thead class="bg-light" >
             		<tr>
             			<th>Nama Pegawai</th>
@@ -65,6 +66,7 @@
             			<th>Kuota Cuti</th>
                         <th>Aksi</th>
             		</tr>
+                </thead>
             		<tbody>
                         <tr>
             			<td>00129</td>
@@ -125,15 +127,12 @@
                                     </div>
                                 </div>
                         </td>
-                        </tr>
-                        
+                        </tr>                        
             		</tbody>
-            	</thead>
-            	
             </table>
         </div>
     </div>
-
+</div>
 <?php
     include"../footer.php";
 ?>

@@ -96,6 +96,7 @@
                                     </div>
                                 </div>
                             <a data-toggle="modal"href="#hapusdata"> Hapus </a>
+                                <form action="" method="POST">
                                 <div class="modal fade" id="hapusdata">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -106,12 +107,13 @@
                                                 Anda yakin akan menghapus data ?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-rounded btn-primary" name="btn_hapus_cuti">Ya</button>
+                                                <button type="button" class="btn btn-rounded btn-primary" name="btn_hapus_lembur">Ya</button>
                                                 <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
                         </td>
                         </tr>
             		</tbody>

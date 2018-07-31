@@ -116,8 +116,10 @@
                                                 Anda yakin akan menghapus data ?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-rounded btn-primary" name="btn_hapus_cuti">Ya</button>
+                                                <form action="" method="POST">
+                                                <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_cuti">Ya</button>
                                                 <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

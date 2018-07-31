@@ -79,27 +79,28 @@
                                 <td><?= $fetchPegawai["nama"] ?></td>
                                 <td><?= $fetchPegawai["NIP"] ?></td>
                                 <td><?= $fetchPegawai["alamat"] ?></td>
-                                <td><a data-toggle="modal" href="#ubahdata"> Ubah </a>
-                                    <div class="modal fade" id="ubahdata">
+                                <td><a data-toggle="modal" href="#ubahdata<?= $fetchPegawai['NIP'] ?>"> Ubah </a>
+                                    <div class="modal fade" id="ubahdata<?= $fetchPegawai['NIP'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title"> Ubah Data Pegawai </h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="" name="" method="POST">
+                                                    <form action="../function/ubah_pegawai.php" name="" method="POST">
+                                                        <input type="hidden" name="ubah_NIP" value="<?= $fetchPegawai['NIP'] ?>">
                                                         <div class="form-group">
                                                             <label for="nama">ID :</label>
-                                                            <input type="text" name="id" class="form-control" id="id">
+                                                            <input type="text" name="id" class="form-control" id="id" value="<?= $fetchPegawai['NIP'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Nama :</label>
-                                                            <input type="text" name="nama" class="form-control" id="nama">
+                                                            <input type="text" name="nama" class="form-control" id="nama"  value="<?= $fetchPegawai['nama'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Jabatan :</label>
                                                             <select name="jabatan" class="custom-select">
-                                                                    <option> dummy </option>
+                                                                    <option value="pilih_jabatan"> Pilih Jabatan </option>
                                                                     <option> dummy </option>
                                                                     <option> dummy </option>
                                                                     <option> dummy </option>
@@ -107,7 +108,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Alamat :</label>
-                                                            <input type="text" name="alamat" class="form-control" id="alamat">
+                                                            <input type="text" name="alamat" class="form-control" id="alamat"  value="<?= $fetchPegawai['alamat'] ?>">
                                                         </div>
                                                         <button type="Submit" class="btn btn-rounded btn-primary btn-block" name="btn_simpan_pegawai">Simpan</button>
                                                     </form>
@@ -118,25 +119,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a data-toggle="modal" href="#hapusdata"> Hapus </a>
-                                    <form action="" method="POST">
-                                    <div class="modal fade" id="hapusdata">
+                                    <a data-toggle="modal" href="#hapusdata<?= $fetchPegawai['NIP'] ?>"> Hapus </a>
+                                    <form action="../function/hapus_pegawai.php" method="POST">
+                                    <div class="modal fade" id="hapusdata<?= $fetchPegawai['NIP'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title text-warning"> Hapus Data </h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Anda yakin akan menghapus data ?
+                                                    <input type="hidden" name="hapus_NIP" value="<?= $fetchPegawai['NIP'] ?>">
+                                                    Anda yakin akan menghapus data pegawai <br> <?= $fetchPegawai['nama'] ?> ?
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-rounded btn-primary" name="btn_hapus_pegawai">Ya</button>
+                                                    <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_pegawai">Ya</button>
                                                     <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                    </form>
                                 </td>
                             </tr>
                         <?php } ?>

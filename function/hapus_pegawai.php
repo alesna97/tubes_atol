@@ -1,8 +1,9 @@
 <?php
 require "../config/conn_db.php";
 
-if (isset($_GET['NIP'])) {
-    $NIP = $_GET['NIP'];
+if (isset($_POST['btn_hapus_pegawai'])) {
+    $NIP = $_POST['hapus_NIP'];
+    //echo $NIP;
     $sql = "DELETE FROM pegawai WHERE NIP='$NIP'";
     mysqli_query($conn,$sql);
 } else {

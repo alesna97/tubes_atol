@@ -21,7 +21,7 @@ if (empty($id) || empty($nama) || $jabatan=="pilih_jabatan" || empty($alamat)) {
         VALUES ('"."$id"."',"."'"."$nama"."',"."'1997/05/10',"."'"."$alamat"."',"."'L',"."'Islam'".")";
 
         if ($conn->query($sql) === TRUE) {
-            echo "<script>window.alert('Pegawai Berhasil ditambahkan.');</script>";
+            //echo "<script>window.alert('Pegawai Berhasil ditambahkan.');</script>";
             header('location:../view/pegawai.php');
         } else {
             echo "Error: ".$sql."<br>".$conn->error;

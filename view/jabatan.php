@@ -4,7 +4,8 @@
     require "../config/conn_db.php";
     include "../header.php";
 ?>
-	<div class="container-fluid">
+
+<div class="container-fluid">
             <div class="row" style="padding: 15px;">
                  <div class="btn-group">
                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addData">
@@ -40,7 +41,7 @@
                                                         <label for="nama">Alamat :</label>
                                                         <input type="text" name="alamat" class="form-control" id="alamat">
                                                     </div>
-                                                    <button type="button" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_pegawai">Submit</button>
+                                                    <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_pegawai">Submit</button>
                                                     <button type="reset" class="btn btn-secondary btn-rounded btn-primary btn-block" >Reset</button>
                                                 </form>
                                             </div>
@@ -67,17 +68,16 @@
             	<thead class="bg-light" >
             		<tr>
             			<th>ID</th>
-            			<th>Nama</th>
-            			<th>Jabatan</th>
-            			<th>Alamat</th>
+            			<th>Jabatan </th>
+            			<th>Gaji</th>
                         <th>Pilih</th>
                         <th>Aksi</th>
             		</tr>
             		<tbody>
             			<td>00129</td>
-            			<td>Anjas Lesmana</td>
-            			<td>CEO</td>
-            			<td>Pungkur</td>
+            			<td>Dummy</td>
+            			<td>Dummy</td>
+            			<td>Dumm</td>
                         <td>
                             <form>
                                 <div class="custom-control custom-checkbox">
@@ -97,6 +97,7 @@
             </table>
         </div>
     </div>
+
 <?php
     include"../footer.php";
 ?>

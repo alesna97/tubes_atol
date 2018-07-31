@@ -26,22 +26,16 @@
                         <ul class="list-unstyled components">
                             <li><a href="dashboard.php"><img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> Dashbaord</a></li>
                             <li><a href="pegawai.php"><img class="icn-20" src="../asset/icons/icons8_Employee_50px.png"> Pegawai</a></li>
-                            <li><a href="#"><img class="icn-20" src="../asset/icons/icons8_Medal_50px.png"> Jabatan</a></li>
-                            <li><a href="#"><img class="icn-20" src="../asset/icons/icons8_Stack_of_Money_50px.png"> Gaji</a></li>
+                            <li><a href="jabatan.php"><img class="icn-20" src="../asset/icons/icons8_Medal_50px.png"> Jabatan</a></li>
+                            <li><a href="gaji.php"><img class="icn-20" src="../asset/icons/icons8_Stack_of_Money_50px.png"> Gaji</a></li>
                         </ul>
                     </li>
                     <li style="padding-left: 10px">
-                        <img class="icn-20" src="../asset/icons/icons8_Time_Machine_50px.png"> Riwayat Pegawai</a>
+                        <img class="icn-20" src="../asset/icons/icons8_Time_Machine_50px.png"> Pegawai</a>
                         <ul class="list-unstyled components">
-                            <li><a href="#"> <img class="icn-20" src="../asset/icons/icons8_Graduation_Cap_50px.png">Riwayat Pendidikan</a></li> 
-                            <li><a href="#"><img class="icn-20" src="../asset/icons/icons8_account_50px.png">Riwayat Jabatan</a></li>
+                            <li><a href="cuti.php"> <img class="icn-20" src="../asset/icons/icons8_Graduation_Cap_50px.png"> Data Cuti</a></li> 
+                            <li><a href="lembur.php"><img class="icn-20" src="../asset/icons/icons8_account_50px.png"> Data Lembur </a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#"><img class="icn-20" src="../asset/icons/icons8_Info_50px.png"> Tentang </a>
-                    </li>
-                    <li>
-                        <a href="#"> <img class="icn-20" src="../asset/icons/icons8_Stack_of_Money_50px.png"> Pengaturan </a>
                     </li>
                 </ul>
             </nav>

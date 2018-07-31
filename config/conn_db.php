@@ -2,7 +2,7 @@
 	$host = 'localhost';
 	$user = 'root';
 	$pass = '';
-	$db = 'dbkepegawaian';
+	$db = '10115349_kepegawaian';
 	// create connection
 	$conn = mysqli_connect($host,$user,$pass,$db);
 	// check connection

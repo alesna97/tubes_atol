@@ -4,7 +4,8 @@
     require "../config/conn_db.php";
     include "../header.php";
 ?>
-	<div class="container-fluid">
+
+<div class="container-fluid">
             <div class="row" style="padding: 15px;">
                  <div class="btn-group">
                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addData">
@@ -66,18 +67,14 @@
             <table class="table table-striped">
             	<thead class="bg-light" >
             		<tr>
-            			<th>ID</th>
-            			<th>Nama</th>
-            			<th>Jabatan</th>
-            			<th>Alamat</th>
+            			<th>Nama Pegawai</th>
+            			<th>Jumlah Jam Lembur</th>
                         <th>Pilih</th>
                         <th>Aksi</th>
             		</tr>
             		<tbody>
             			<td>00129</td>
-            			<td>Anjas Lesmana</td>
-            			<td>CEO</td>
-            			<td>Pungkur</td>
+            			<td>Dummy</td>
                         <td>
                             <form>
                                 <div class="custom-control custom-checkbox">
@@ -97,6 +94,7 @@
             </table>
         </div>
     </div>
+
 <?php
     include"../footer.php";
 ?>

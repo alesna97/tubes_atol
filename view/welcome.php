@@ -12,7 +12,7 @@
         <script src="../asset/js/bootstrap.min.js"></script>
 
     </head>
-<body style="background: url('../asset/images/welcomebg.jpg'); background-size: cover;">
+<body class="bg"><!--style="background: url('../asset/images/welcomebg.jpg'); background-size: cover;"-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-xs-4 col-sm-12" > </div>
@@ -29,7 +29,6 @@
                 <br>
                 <br>
                 <a href="../view/login.php"><button type="button" class="btn btn-primary btn-block btn-rounded">Log In</button></a><hr>
-                <a href="../view/register.php"><button type="button" class="btn btn-secondary btn-block btn-rounded">Create Account</button></a>
                 
             </div>
             <div style="text-align: right;" class="col-md-4 col-xs-4 col-sm-12" > 

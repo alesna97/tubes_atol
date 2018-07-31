@@ -43,7 +43,6 @@
                             </div>  
                         </div>
                         <button type="submit" class="btn btn-primary btn-block btn-rounded" name="btn_login">Log in</button>
-                        Didn't have an account ? <a href="../view/register.php">Create One.</a>
                         <hr>
                     </form>
                 </div>

@@ -8,7 +8,7 @@
 <div class="container-fluid">
             <div class="row" style="padding: 15px;">
                 <div class="col">
-                    <h4>Data Gaji</h4>
+                  <img class="icn-20" src="../asset/icons/icons8_Administrative_Tools_50px.png">/ Data Gaji
                 </div>
                 <div class="col">
                  <div class="btn-group">
@@ -56,7 +56,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                -->
+                                
                         <button type="button" class="btn btn-secondary">
                             <img src="../asset/icons/icons8_Waste_26px.png">
                         </button>
@@ -66,7 +66,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Ascending</a>
                                 <a class="dropdown-item" href="#">Descending</a>
-                            </div>
+                            </div>-->
                     </div>
                 </div>
                 <div class="col">
@@ -86,9 +86,8 @@
             			<td>00129</td>
             			<td>Dummy</td>
             			<td>Dummy</td>
-                        <td><a href="#"> Edit </a>
-                            <a href="#"> Delete </a>
-                            <a href="#"> Detil </a>
+                        <td><a href="#"> Ubah </a>
+                            <a href="#"> Hapus </a>
                         </td>
                         </tr>
                         

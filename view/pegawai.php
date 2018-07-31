@@ -59,8 +59,10 @@
                                 </div>
                 </div>
             </div>
+
         <div class="row">
-            <table class="table table-striped">
+            <div class="table-responsive">
+            <table class="table table-striped" id="tables" style="width:100%;">
             	<thead class="bg-light" >
             		<tr>
             			<th>ID</th>
@@ -144,9 +146,9 @@
                         <?php } ?>
             		</tbody>
             	</thead>
-            	
             </table>
         </div>
+    </div>
     </div>
 <?php
     include"../footer.php";

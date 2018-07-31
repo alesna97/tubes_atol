@@ -53,13 +53,15 @@
                 </div>
             </div>
         <div class="row">
-            <table class="table table-striped">
+            <div class="table-responsive">
+            <table class="table table-striped" id="tables">
             	<thead class="bg-light" >
             		<tr>
             			<th>Nama Pegawai</th>
             			<th>Jumlah Jam Lembur</th>
                         <th>Aksi</th>
             		</tr>
+                </thead>
             		<tbody>
                         <tr>
             			<td>00129</td>
@@ -107,7 +109,7 @@
                                                 Anda yakin akan menghapus data ?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-rounded btn-primary" name="btn_hapus_lembur">Ya</button>
+                                                <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_lembur">Ya</button>
                                                 <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
                                             </div>
                                         </div>
@@ -120,7 +122,7 @@
             </table>
         </div>
     </div>
-
+</div>
 <?php
     include"../footer.php";
 ?>

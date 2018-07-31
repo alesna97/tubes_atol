@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <link rel="stylesheet" href="../asset/css/bootstrap.css">
+        <link rel="stylesheet" href="../asset/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="../asset/css/style1.css">
         <script src="../asset/js/jquery.min.js"></script>
         <script src="../asset/js/popper.min.js"></script>
@@ -20,11 +21,11 @@
                     <hr>
                 </div>
                 <ul class="list-unstyled components">
+                    <li style="margin-bottom: 10px"><a href="dashboard.php"><img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> Dashbaord</a></li>
                     <li class="active" style="padding-left: 10px">
                             <img class="icn-20" src="../asset/icons/icons8_Administrative_Tools_50px.png">
                          Administrator
                         <ul class="list-unstyled components">
-                            <li><a href="dashboard.php"><img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> Dashbaord</a></li>
                             <li><a href="pegawai.php"><img class="icn-20" src="../asset/icons/icons8_Employee_50px.png"> Pegawai</a></li>
                             <li><a href="jabatan.php"><img class="icn-20" src="../asset/icons/icons8_Medal_50px.png"> Jabatan</a></li>
                             <li><a href="gaji.php"><img class="icn-20" src="../asset/icons/icons8_Stack_of_Money_50px.png"> Gaji</a></li>
@@ -51,20 +52,9 @@
                         <i class="fas fa-align-justify"></i>
                     </button>
                         </div>
-                        <div class="col">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <div class="input-group mb-3" style="margin-top: 10px; margin-right: 150px;">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-secondary" type="submit">Cari</button> 
-                                        </div>
-                                    </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>  
+                        <div class="col text-center">
+                            <h4 class="text-secondary"> Sistem Kepegawaian</h4>
+                        </div> 
                         <div class="col">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">

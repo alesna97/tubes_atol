@@ -16,7 +16,8 @@
                 </div>
             </div>
         <div class="row">
-            <table class="table table-striped">
+            <div class="table-responsive">
+            <table class="table table-striped" id="tables">
             	<thead class="bg-light" >
             		<tr>
             			<th>Nama Pegawai</th>
@@ -24,6 +25,7 @@
             			<th>Gaji</th>
                         <th>Aksi</th>
             		</tr>
+                </thead>
             		<tbody>
                         <tr>
             			<td>00129</td>
@@ -51,14 +53,11 @@
                             </form>
                         </td>
                         </tr>
-                        
             		</tbody>
-            	</thead>
-            	
             </table>
         </div>
     </div>
-
+</div>
 <?php
     include"../footer.php";
 ?>

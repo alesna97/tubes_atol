@@ -1,7 +1,10 @@
            /*Layout Style*/
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 
 .bg{
-    background: #f9fafc; 
+    background: #f9fafc;
+    font-family: 'Poppins', sans-serif;  
 }
 
 .formstyle1{
@@ -90,7 +93,7 @@ a:focus {
     color: grey;
     transition: all 0.3s;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    font-family: raleway;
+    font-family: 'Poppins', sans-serif;  
 }
 
 #sidebar.active {

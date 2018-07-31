@@ -4,11 +4,12 @@
     require "../config/conn_db.php";
     include "../header.php";
 ?>
-	<div class="container-fluid">
+
+<div class="container-fluid">
             <div class="row" style="padding: 15px;">
-                <div class="col">
-                    <h4>Data Pegawai</h4>
-                </div>
+                <dic class="col">
+                    <h4>Data Jabatan</h4>
+                </dic>
                 <div class="col">
                  <div class="btn-group">
                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addData">
@@ -19,37 +20,33 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title"> Tambah Data Pegawai </h4>
+                                                <h4 class="modal-title"> Tambah Data Jabatan </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="../function/tambah_pegawai.php" name="" method="POST">
+                                                <form action="" name="" method="POST">
                                                     <div class="form-group">
                                                         <label for="nama">ID :</label>
                                                         <input type="text" name="id" class="form-control" id="id">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="nama">Nama :</label>
-                                                        <input type="text" name="nama" class="form-control" id="nama">
-                                                    </div>
-                                                    <div class="form-group">
                                                         <label for="nama">Jabatan :</label>
                                                         <select name="jabatan" class="custom-select">
-                                                                <option value="pilih_jabatan"> Pilih Jabatan </option>
+                                                                <option> dummy </option>
                                                                 <option> dummy </option>
                                                                 <option> dummy </option>
                                                                 <option> dummy </option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="nama">Alamat :</label>
-                                                        <input type="text" name="alamat" class="form-control" id="alamat">
+                                                        <label for="nama">Gaji :</label>
+                                                        <input type="text" name="gaji" class="form-control" id="alamat">
                                                     </div>
-                                                    <button type="Submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_pegawai">Submit</button>
+                                                    <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_jabatan">Submit</button>
                                                     <button type="reset" class="btn btn-secondary btn-rounded btn-primary btn-block" >Reset</button>
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-block btn-rounded btn-danger" data-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-block btn-rounded btn-danger" data-dismiss="modal">Tutup</button>
                                             </div>
                                         </div>
                                     </div>
@@ -74,40 +71,28 @@
             	<thead class="bg-light" >
             		<tr>
             			<th>ID</th>
-            			<th>Nama</th>
-            			<th>Jabatan</th>
-            			<th>Alamat</th>
+            			<th>Jabatan </th>
+            			<th>Gaji</th>
                         <th>Aksi</th>
             		</tr>
             		<tbody>
-                        <?php 
-                        $selectPegawai = "SELECT NIP, nama, alamat FROM pegawai";
-                        $getPegawai = mysqli_query($conn, $selectPegawai);
-                        while ($fetchPegawai = mysqli_fetch_array($getPegawai)) { ?>
-                            <tr>
-                                <td><?= $fetchPegawai["NIP"] ?></td>
-                                <td><?= $fetchPegawai["nama"] ?></td>
-                                <td><?= $fetchPegawai["NIP"] ?></td>
-                                <td><?= $fetchPegawai["alamat"] ?></td>
-                                <td>
-                                    <form>
-                                        <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="checklist">
-                                        <label class="custom-control-label" for="customCheck">.</label>
-                                        </div>
-                                    </form>
-                                </td>
-                                <td><a href="#"> Edit </a>
-                                    <a href="#"> Detil </a>
-                                </td>
-                            </tr>
-                        <?php } ?>
+            			<tr>
+            			<td>00129</td>
+            			<td>Dummy</td>
+            			<td>Dummy</td>
+                        <td><a href="#"> Edit </a>
+                        	<a href="#"> Delete </a>
+                            <a href="#"> Detil </a>
+                        </td>
+                        </tr>
+                        
             		</tbody>
             	</thead>
             	
             </table>
         </div>
     </div>
+
 <?php
     include"../footer.php";
 ?>

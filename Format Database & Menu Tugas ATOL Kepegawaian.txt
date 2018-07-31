@@ -1,0 +1,45 @@
+Database Kepegawaian :
+Pegawai : id_pegawai (primary key), nama_pegawai, nama_jabatan (foreign key jabatan.nama_jabatan), jenis_kelamin, alamat, no_tlp, email, tgl_lahir 
+Jabatan : id_jabatan (primary key), nama_jabatan, gaji_jabatan
+Lembur	: nama_pegawai (foreign key [nama_pegawai]) (primary key), jumlah_jam_lembur
+Cuti	: nama_pegawai (foreign key [nama_pegawai]) (primary key), jumlah_cuti, kuota_cuti
+Gaji	: nama_pegawai (foreign key [nama_pegawai]) (primary key), nama_jabatan (foreign key jabatan.nama_jabatan), total_gaji
+
+Menu & Fungsi Kepegawaian :
+# Pegawai
+	- Tampil Data Pegawai
+	- Tambah Data Pegawai
+	- Hapus Data Pegawai
+	- Ubah Data Pegawai
+	- Cari Data Pegawai
+	- Urutkan Data Pegawai
+	- Cetak Data Pegawai
+# Jabatan
+	- Tampil Data Jabatan
+	- Tambah Data Jabatan
+	- Hapus Data Jabatan
+	- Ubah Data Jabatan
+	- Cari Data Jabatan
+	- Urutkan Data Jabatan
+	- Cetak Data Jabatan
+# Lembur
+	- Tampil Data Lembur
+	- Tambah Data Lembur
+	- Hapus Data Lembur
+	- Ubah Data Lembur
+	- Cari Data Lembur
+	- Urutkan Data Lembur
+	- Cetak Data Lembur
+# Cuti
+	- Tampil Data Cuti
+	- Tambah Data Cuti
+	- Hapus Data Cuti
+	- Ubah Data Cuti
+	- Cari Data Cuti
+	- Urutkan Data Cuti
+	- Cetak Data Cuti
+# Gaji
+	- Tampil Data Gaji
+	- Cari Data Gaji
+	- Urutkan Data Gaji
+	- Cetak Data Gaji

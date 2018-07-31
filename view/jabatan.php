@@ -8,13 +8,16 @@
 <div class="container-fluid">
             <div class="row" style="padding: 15px;">
                 <dic class="col">
-                    <h4>Data Jabatan</h4>
+                   <img class="icn-20" src="../asset/icons/icons8_Administrative_Tools_50px.png">/ Data Jabatan
                 </dic>
                 <div class="col">
-                 <div class="btn-group">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addData">
-                            <img src="../asset/icons/icons8_Plus_Math_26px.png">
-                        </button>
+                        
+                </div>
+                <div class="col">
+                    <div class=" text-right">
+                    <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#addData">
+                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_26px.png" class="icn-10"> Tambah</div></button>
+                        </button></div>
                             <!-- ADD DATA -->
                                     <div class="modal fade" id="addData">
                                     <div class="modal-dialog">
@@ -51,19 +54,6 @@
                                         </div>
                                     </div>
                                 </div>
-                        <button type="button" class="btn btn-secondary">
-                            <img src="../asset/icons/icons8_Waste_26px.png">
-                        </button>
-                        <button type="button" class="btn btn-secondary" data-toggle="dropdown">
-                            <img src="../asset/icons/icons8_Sort_26px.png">
-                        </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Ascending</a>
-                                <a class="dropdown-item" href="#">Descending</a>
-                            </div>
-                    </div>
-                </div>
-                <div class="col">
                 </div>
             </div>
         <div class="row">
@@ -80,9 +70,8 @@
             			<td>00129</td>
             			<td>Dummy</td>
             			<td>Dummy</td>
-                        <td><a href="#"> Edit </a>
-                        	<a href="#"> Delete </a>
-                            <a href="#"> Detil </a>
+                        <td><a href="#"> Ubah </a>
+                            <a href="#"> Hapus </a>
                         </td>
                         </tr>
                         

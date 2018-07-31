@@ -31,11 +31,11 @@
                         </ul>
                     </li>
                     <li style="padding-left: 10px">
-                        <img class="icn-20" src="../asset/icons/icons8_Time_Machine_50px.png"> Rekap Data Pegawai</a>
+                        <img class="icn-20" src="../asset/icons/icons8_Process_50px.png"> Rekap Data Pegawai</a>
                         <ul class="list-unstyled components">
-                            <li><a href="cuti.php"> <img class="icn-20" src="../asset/icons/icons8_Graduation_Cap_50px.png"> Data Cuti</a></li> 
-                            <li><a href="lembur.php"><img class="icn-20" src="../asset/icons/icons8_account_50px.png"> Data Lembur </a></li>
-                        </ul>
+                            <li><a href="cuti.php"> <img class="icn-20" src="../asset/icons/icons8_Schedule_50px.png"> Data Cuti</a></li> 
+                            <li><a href="lembur.php"><img class="icn-20" src="../asset/icons/icons8_Suitcase_50px.png"> Data Lembur </a></li>
+                        </ul> 
                     </li>
                 </ul>
             </nav>

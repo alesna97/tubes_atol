@@ -7,11 +7,16 @@
 
 <div class="container-fluid">
             <div class="row" style="padding: 15px;">
+                <div class="col">
+                    <h4>Data Gaji</h4>
+                </div>
+                <div class="col">
                  <div class="btn-group">
+                    <!-- ADD DATA
                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addData">
                             <img src="../asset/icons/icons8_Plus_Math_26px.png">
                         </button>
-                            <!-- ADD DATA -->
+                             
                                     <div class="modal fade" id="addData">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -51,6 +56,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                         <button type="button" class="btn btn-secondary">
                             <img src="../asset/icons/icons8_Waste_26px.png">
                         </button>
@@ -62,6 +68,9 @@
                                 <a class="dropdown-item" href="#">Descending</a>
                             </div>
                     </div>
+                </div>
+                <div class="col">
+                </div>
             </div>
         <div class="row">
             <table class="table table-striped">
@@ -70,25 +79,18 @@
             			<th>Nama Pegawai</th>
             			<th>Jumlah</th>
             			<th>Gaji</th>
-                        <th>Pilih</th>
                         <th>Aksi</th>
             		</tr>
             		<tbody>
+                        <tr>
             			<td>00129</td>
             			<td>Dummy</td>
             			<td>Dummy</td>
-                        <td>
-                            <form>
-                                <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck" name="checklist">
-                                <label class="custom-control-label" for="customCheck">.</label>
-                                </div>
-                            </form>
-                        </td>
                         <td><a href="#"> Edit </a>
+                            <a href="#"> Delete </a>
                             <a href="#"> Detil </a>
                         </td>
-                        <tr>
+                        </tr>
                         
             		</tbody>
             	</thead>

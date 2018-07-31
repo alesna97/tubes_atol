@@ -31,7 +31,7 @@
                         </ul>
                     </li>
                     <li style="padding-left: 10px">
-                        <img class="icn-20" src="../asset/icons/icons8_Time_Machine_50px.png"> Pegawai</a>
+                        <img class="icn-20" src="../asset/icons/icons8_Time_Machine_50px.png"> Rekap Data Pegawai</a>
                         <ul class="list-unstyled components">
                             <li><a href="cuti.php"> <img class="icn-20" src="../asset/icons/icons8_Graduation_Cap_50px.png"> Data Cuti</a></li> 
                             <li><a href="lembur.php"><img class="icn-20" src="../asset/icons/icons8_account_50px.png"> Data Lembur </a></li>

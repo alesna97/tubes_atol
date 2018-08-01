@@ -15,7 +15,7 @@
                 <div class="col">
                     <div class="text-right">
                     <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#addData">
-                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_24px.png" class="icn-15s"> Tambah</div>
+                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_24px.png" class="icn-15"> Tambah</div>
                         </button></div>
                             <!-- ADD DATA -->
                                     <div class="modal fade" id="addData">
@@ -44,7 +44,26 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="nama">Alamat :</label>
+                                                        <label for="nama">Tanggal Lahir :</label>
+                                                        <input type="date" name="tanggal_lahir" class="form-control" id="alamat">
+                                                    </div>
+                                                    <label for="jenis_kelamin">Jenis Kelamin :</label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input" name="jenis_kelamin" value="Laki - Laki" checked>Laki - Laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="jenis_kelamin" value="Perempuan">Perempuan
+                                                      </label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="no_hp">No Hp :</label>
+                                                        <input type="text" name="no_hp" class="form-control" id="no_hp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="alamat">Alamat :</label>
                                                         <input type="text" name="alamat" class="form-control" id="alamat">
                                                     </div>
                                                     <button type="Submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_pegawai">Submit</button>
@@ -114,6 +133,25 @@
                                                                     <option> dummy </option>
                                                             </select>
                                                         </div>
+                                                        <div class="form-group">
+                                                        <label for="nama">Tanggal Lahir :</label>
+                                                        <input type="date" name="tanggal_lahir" class="form-control" id="alamat">
+                                                    </div>
+                                                    <label for="jenis_kelamin">Jenis Kelamin :</label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input" name="jenis_kelamin" value="Laki - Laki" checked>Laki - Laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="jenis_kelamin" value="Perempuan">Perempuan
+                                                      </label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="no_hp">No Hp :</label>
+                                                        <input type="text" name="no_hp" class="form-control" id="no_hp">
+                                                    </div>
                                                         <div class="form-group">
                                                             <label for="nama">Alamat :</label>
                                                             <input type="text" name="alamat" class="form-control" id="alamat"  value="<?= $fetchPegawai['alamat'] ?>">

@@ -14,46 +14,7 @@
                         
                 </div>
                 <div class="col">
-                    <div class=" text-right">
-                    <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#addData">
-                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_24px.png" class="icn-15"> Tambah</div></button>
-                        </button></div>
-                            <!-- ADD DATA -->
-                                    <div class="modal fade" id="addData">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"> Tambah Data Jabatan </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="" name="" method="POST">
-                                                    <div class="form-group">
-                                                        <label for="nama">ID :</label>
-                                                        <input type="text" name="id" class="form-control" id="id">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Jabatan :</label>
-                                                        <select name="jabatan" class="custom-select">
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Gaji :</label>
-                                                        <input type="text" name="gaji" class="form-control" id="alamat">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_jabatan">Submit</button>
-                                                    <button type="reset" class="btn btn-secondary btn-rounded btn-primary btn-block" >Reset</button>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-block btn-rounded btn-danger" data-dismiss="modal">Tutup</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    
                 </div>
             </div>
         <div class="row">
@@ -64,70 +25,19 @@
             			<th>ID</th>
             			<th>Jabatan </th>
             			<th>Gaji</th>
-                        <th>Aksi</th>
             		</tr>
                 </thead>
             		<tbody>
-            			<tr>
-            			<td>00129</td>
-            			<td>Dummy</td>
-            			<td>Dummy</td>
-                        <td><a data-toggle="modal" href="#ubahdata"> Ubah </a>
-                                <div class="modal fade" id="ubahdata">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"> Ubah Data Jabatan </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="" name="" method="POST">
-                                                    <div class="form-group">
-                                                        <label for="nama">ID :</label>
-                                                        <input type="text" name="id" class="form-control" id="id">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Jabatan :</label>
-                                                        <select name="jabatan" class="custom-select">
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Gaji :</label>
-                                                        <input type="text" name="gaji" class="form-control" id="alamat">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_simpan_jabatan">Simpan</button>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-block btn-rounded btn-danger" data-dismiss="modal">Batal</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <a data-toggle="modal"href="#hapusdata"> Hapus </a>
-                                <form action="" method="POST">
-                                <div class="modal fade" id="hapusdata">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title text-warning"> Hapus Data </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                Anda yakin akan menghapus data ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_jabatan">Ya</button>
-                                                <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </td>
-                        </tr>
+                        <?php 
+                            $selectJabatan = "SELECT * FROM jabatan";
+                            $getJabatan = mysqli_query($conn, $selectJabatan);
+                            while ($fetchJabatan = mysqli_fetch_array($getJabatan)) { ?>
+                            <tr>
+                                <td><?= $fetchJabatan["id_jabatan"] ?></td>
+                                <td><?= $fetchJabatan["nama_jabatan"] ?></td>
+                                <td><?="Rp. " . number_format($fetchJabatan["gaji_jabatan"],2,',','.'); ?></td>
+                            </tr>
+                        <?php } ?>
             		</tbody>
             </table>
         </div>

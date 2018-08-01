@@ -206,7 +206,7 @@
                                         </div>
                                     </div>
                                     <a data-toggle="modal" href="#hapusdata<?= $fetchPegawai['id_pegawai'] ?>"> Hapus </a>
-                                    <form action="../function/hapus_pegawai.php" method="POST">
+                                    <form action="../function/function_pegawai.php" method="POST">
                                     <div class="modal fade" id="hapusdata<?= $fetchPegawai['id_pegawai'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">

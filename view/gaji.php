@@ -21,38 +21,21 @@
             	<thead class="bg-light" >
             		<tr>
             			<th>Nama Pegawai</th>
-            			<th>Jumlah</th>
-            			<th>Gaji</th>
-                        <th>Aksi</th>
+            			<th>Jabatan</th>
+                        <th>Total Gaji</th>
             		</tr>
                 </thead>
             		<tbody>
-                        <tr>
-            			<td>00129</td>
-            			<td>Dummy</td>
-            			<td>Dummy</td>
-                        <td>
-                            <form method="POST" action="">
-                            <a data-toggle="modal"href="#hapusdata"> Hapus </a>
-                                <div class="modal fade" id="hapusdata">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title text-warning"> Hapus Data </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                Anda yakin akan menghapus data ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_gaji">Ya</button>
-                                                <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </td>
-                        </tr>
+                        <?php 
+                            $selectGaji = "SELECT * FROM gaji, pegawai, jabatan WHERE gaji.id_pegawai=pegawai.id_pegawai AND gaji.id_jabatan=jabatan.id_jabatan";
+                            $getGaji = mysqli_query($conn, $selectGaji);
+                            while ($fetchGaji = mysqli_fetch_array($getGaji)) { ?>
+                            <tr>
+                                <td><?= $fetchGaji["nama_pegawai"] ?></td>
+                                <td><?= $fetchGaji["nama_jabatan"] ?></td>
+                                <td><?="Rp. " . number_format($fetchGaji["gaji_jabatan"],2,',','.'); ?></td>
+                            </tr>
+                        <?php } ?>
             		</tbody>
             </table>
         </div>

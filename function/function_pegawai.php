@@ -40,7 +40,13 @@ if (isset($_POST['btn_hapus_pegawai'])) {
     $id = $_POST['hapus_id'];
     $sql = "DELETE FROM pegawai WHERE id_pegawai='$id'";
     mysqli_query($conn, $sql);
-    header('location:../view/pegawai.php');
+    
+    if ($conn->query($sql) === TRUE) {
+        //echo "<script>window.alert('Pegawai Berhasil ditambahkan.');</script>";
+        header('location:../view/pegawai.php');
+    } else {
+        echo "Error: ".$sql."<br>".$conn->error;
+    }
 }
 
 if (isset($_POST['btn_simpan_pegawai'])) {

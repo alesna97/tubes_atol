@@ -68,21 +68,27 @@
             			<th>ID</th>
             			<th>Nama</th>
             			<th>Jabatan</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Jenis Kelamin</th>
+                        <th>No. HP</th>
             			<th>Alamat</th>
                         <th>Aksi</th>
             		</tr>
             		<tbody>
                     <?php 
-                        $selectPegawai = "SELECT NIP, nama, alamat FROM pegawai";
+                        $selectPegawai = "SELECT id_pegawai, nama_pegawai, nama_jabatan, tanggal_lahir, jenis_kelamin, no_hp, alamat FROM pegawai, jabatan WHERE pegawai.id_jabatan = jabatan.id_jabatan";
                         $getPegawai = mysqli_query($conn, $selectPegawai);
                         while ($fetchPegawai = mysqli_fetch_array($getPegawai)) { ?>
                             <tr>
-                                <td><?= $fetchPegawai["NIP"] ?></td>
-                                <td><?= $fetchPegawai["nama"] ?></td>
-                                <td><?= $fetchPegawai["NIP"] ?></td>
+                                <td><?= $fetchPegawai["id_pegawai"] ?></td>
+                                <td><?= $fetchPegawai["nama_pegawai"] ?></td>
+                                <td><?= $fetchPegawai["nama_jabatan"] ?></td>
+                                <td><?= $fetchPegawai["tanggal_lahir"] ?></td>
+                                <td><?= $fetchPegawai["jenis_kelamin"] ?></td>
+                                <td><?= $fetchPegawai["no_hp"] ?></td>
                                 <td><?= $fetchPegawai["alamat"] ?></td>
-                                <td><a data-toggle="modal" href="#ubahdata<?= $fetchPegawai['NIP'] ?>"> Ubah </a>
-                                    <div class="modal fade" id="ubahdata<?= $fetchPegawai['NIP'] ?>">
+                                <td><a data-toggle="modal" href="#ubahdata<?= $fetchPegawai['id_pegawai'] ?>"> Ubah </a>
+                                    <div class="modal fade" id="ubahdata<?= $fetchPegawai['id_pegawai'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -90,20 +96,20 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form action="../function/ubah_pegawai.php" name="" method="POST">
-                                                        <input type="hidden" name="ubah_NIP" value="<?= $fetchPegawai['NIP'] ?>">
+                                                        <input type="hidden" name="ubah_id" value="<?= $fetchPegawai['id_pegawai'] ?>">
                                                         <div class="form-group">
                                                             <label for="nama">ID :</label>
-                                                            <input type="text" name="id" class="form-control" id="id" value="<?= $fetchPegawai['NIP'] ?>">
+                                                            <input type="text" name="id" class="form-control" id="id" value="<?= $fetchPegawai['id_pegawai'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Nama :</label>
-                                                            <input type="text" name="nama" class="form-control" id="nama"  value="<?= $fetchPegawai['nama'] ?>">
+                                                            <input type="text" name="nama" class="form-control" id="nama"  value="<?= $fetchPegawai['nama_pegawai'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Jabatan :</label>
                                                             <select name="jabatan" class="custom-select">
                                                                     <option value="pilih_jabatan"> Pilih Jabatan </option>
-                                                                    <option> dummy </option>
+                                                                    <option value="staff"> Staff </option>
                                                                     <option> dummy </option>
                                                                     <option> dummy </option>
                                                             </select>
@@ -121,17 +127,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a data-toggle="modal" href="#hapusdata<?= $fetchPegawai['NIP'] ?>"> Hapus </a>
+                                    <a data-toggle="modal" href="#hapusdata<?= $fetchPegawai['id_pegawai'] ?>"> Hapus </a>
                                     <form action="../function/hapus_pegawai.php" method="POST">
-                                    <div class="modal fade" id="hapusdata<?= $fetchPegawai['NIP'] ?>">
+                                    <div class="modal fade" id="hapusdata<?= $fetchPegawai['id_pegawai'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title text-warning"> Hapus Data </h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="hidden" name="hapus_NIP" value="<?= $fetchPegawai['NIP'] ?>">
-                                                    Anda yakin akan menghapus data pegawai <br> <?= $fetchPegawai['nama'] ?> ?
+                                                    <input type="hidden" name="hapus_id" value="<?= $fetchPegawai['id_pegawai'] ?>">
+                                                    Anda yakin akan menghapus data pegawai <br> <?= $fetchPegawai['nama_pegawai'] ?> ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_pegawai">Ya</button>

@@ -25,7 +25,7 @@
                                                 <h4 class="modal-title"> Tambah Data Pegawai </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="../function/tambah_pegawai.php" name="" method="POST">
+                                                <form action="../function/function_pegawai.php" name="" method="POST">
                                                     <div class="form-group">
                                                         <label for="nama">ID :</label>
                                                         <input type="text" name="id_pegawai" class="form-control" id="id">
@@ -139,11 +139,11 @@
                                                     <h4 class="modal-title"> Ubah Data Pegawai </h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="../function/ubah_pegawai.php" name="" method="POST">
+                                                    <form action="../function/function_pegawai.php" name="" method="POST">
                                                         <input type="hidden" name="ubah_id" value="<?= $fetchPegawai['id_pegawai'] ?>">
                                                         <div class="form-group">
                                                             <label for="nama">ID :</label>
-                                                            <input type="text" name="id_pegawai" class="form-control" id="id" value="<?= $fetchPegawai['id_pegawai'] ?>" disabled>
+                                                            <input type="text" name="id_pegawai" class="form-control" id="id" value="<?= $fetchPegawai['id_pegawai'] ?>" readonly>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Nama :</label>

@@ -17,11 +17,11 @@
         <div class="wrapper">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3 align="center"><img src="../asset/images/logo.png" class="logo-50"> <br>Almanac Store</h3>
+                    <h5 align="center"><img src="../asset/images/logo.png" class="logo-25"> <br>Almanac Store</h5>
                     <hr>
                 </div>
                 <ul class="list-unstyled components">
-                    <li style="margin-bottom: 10px"><a href="dashboard.php"><img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> Dashbaord</a></li>
+                    <li style="margin-bottom: 10px"><a href="dashboard.php"><img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> Dashboard</a></li>
                     <li class="active" style="padding-left: 10px">
                             <img class="icn-20" src="../asset/icons/icons8_Administrative_Tools_50px.png">
                          Administrator
@@ -35,7 +35,7 @@
                         <img class="icn-20" src="../asset/icons/icons8_Process_50px.png"> Rekap Data Pegawai</a>
                         <ul class="list-unstyled components">
                             <li><a href="cuti.php"> <img class="icn-20" src="../asset/icons/icons8_Schedule_50px.png"> Data Cuti</a></li> 
-                            <li><a href="lembur.php"><img class="icn-20" src="../asset/icons/icons8_Suitcase_50px.png"> Data Lembur </a></li>
+                            <li><a href="lembur.php"><img class="icn-20" src="../asset/icons/icons8_Last_6_Hours_50px.png"> Data Lembur </a></li>
                         </ul> 
                     </li>
                 </ul>
@@ -46,7 +46,7 @@
                             <div class="col">
                         <button type="button" id="sidebarCollapse" class="btn btn-outline-light btn-rounded">
                             <i class="fas fa-align-left"></i>
-                            <span><img class="icn-35" src="../asset/icons/icons8_Pull_Down_50px.png"></span>
+                            <span><img class="icn-35" src="../asset/icons/icons8_Menu_50px_1.png"></span>
                        </button>
                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>

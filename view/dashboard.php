@@ -10,8 +10,14 @@
         </div>
 		<div class="row">
                 <div class="col">
-                    <div class="card bg-danger text-light" style="padding: 10px"> 
-                        <div class="card-header"><h4>Jumlah Pegawai</h4> 10 orang</div>
+                    <div class="card bg-danger text-light" style="padding: 10px">
+                    <?php
+                        // GET JUMLAH PEGAWAI
+                        $selectPegawai = "SELECT id_pegawai FROM pegawai ";
+                        $res = mysqli_query($conn, $selectPegawai);
+                        $jumlah = mysqli_num_rows($res);
+                    ?> 
+                        <div class="card-header"><h4>Jumlah Pegawai</h4> <?php echo "$jumlah" ?> orang</div>
                     </div>
                 </div>
                 <div class="col">

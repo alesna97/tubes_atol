@@ -46,7 +46,7 @@
                             <div class="col">
                         <button type="button" id="sidebarCollapse" class="btn btn-outline-light btn-rounded">
                             <i class="fas fa-align-left"></i>
-                            <span><img class="icn-35" src="../asset/icons/icons8_Collapse_50px.png"></span>
+                            <span><img class="icn-35" src="../asset/icons/icons8_Pull_Down_50px.png"></span>
                        </button>
                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
@@ -59,7 +59,25 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="logout.php"><img class="icn-35" src="../asset/icons/icons8_Shutdown_50px.png"></a>
+                                <a class="nav-link" data-toggle="modal"href="#logout"><img class="icn-35" src="../asset/icons/icons8_Shutdown_50px.png"></a>
+                                <form action="logout.php" method="POST">
+                                    <div class="modal fade" id="logout">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title text-warning"> Log out </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Anda yakin akan keluar ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_pegawai">Ya</button>
+                                                    <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </li>
                         </ul>
                          </div>

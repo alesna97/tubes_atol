@@ -1,14 +1,10 @@
            /*Layout Style*/
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Archivo');
 
 
 .bg{
     background: #f9fafc;
-    font-family: 'Poppins', sans-serif;  
-}
-.bg1{
-    background: #ffffff;
-    font-family: 'Poppins', sans-serif;  
+    font-family: 'Archivo', sans-serif;  
 }
 
 .formstyle1{
@@ -99,7 +95,6 @@ a:focus {
     color: grey;
     transition: all 0.3s;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;  
 }
 
 #sidebar.active {

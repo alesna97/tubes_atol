@@ -9,18 +9,23 @@
                <img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> <h5>Dashboard</h5>
         </div>
 		<div class="row">
-                <div class="col-md-4 col-xs-4 col-sm-12">
-                    <div class="card bg-light text-primary" style="padding: 10px"> 
+                <div class="col">
+                    <div class="card bg-danger text-light" style="padding: 10px"> 
                         <div class="card-header"><h4>Jumlah Pegawai</h4> 10 orang</div>
                     </div>
                 </div>
-                <div class="col-md-4 col-xs-4 col-sm-12">
-                    <div class="card bg-light text-success" style="padding: 10px"> 
-                        <div class="card-header"><h4>Informasi</h4> Blablabla</div>
+                <div class="col">
+                    <div class="card bg-primary text-success" style="padding: 10px"> 
+                        <div class="card-header">
+                            <h4 class="text-light">Clock<h4>
+                         <?php
+                                include "date.html";
+                         ?>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-xs-4 col-sm-12"> 
-                     <div class="card bg-light text-danger" style="padding: 10px"> 
+                <div class="col"> 
+                     <div class="card bg-success text-light" style="padding: 10px"> 
                         <div class="card-header"><h4>Informasi</h4> Blablabla</div>
                     </div>           
                 </div>

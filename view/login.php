@@ -17,34 +17,33 @@
 
 	</head>
     <body class="bg">
-        <?php
-            include "../navbar.html";
-        ?>
+        <div class="navbar navbar-expand-sm bg-light navbar-light justify-content-center">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="kertasdev.web.id"><img src="../asset/images/logo.png" class="logo-25"></a>
+            </ul>
+        </div>
         <div class="container-fluid">
             <div class="row"> 
                 <div class="col-md-4 col-xs-4 col-sm-12" ></div>
                 <div class="col-md-4 col-xs-4 col-sm-12">
-                    <form id="formlogin" action="../config/login_proc.php" method="POST" target="_SELF" class="formstyle1">
+                    <form id="formlogin" action="../config/login_proc.php" method="POST" class="formstyle1">
                         <div class="text-center">
                             <h4 class="text-dark"> Almanac Store </h4>
                         </div>
                         <hr>
                         <div class="form-group">      
                                 <label for="username"> Username :</label> 
-                                <input type="text" class="form-control" name="user" placeholder="Enter Username" id="username" required>
+                                <input type="text" class="form-control" name="user" placeholder="Masukan Username" id="username" required>
                         </div>
                         <div class="form-group">
                             <label for="Password"> Password :</label>
-                                <input type="Password" class="form-control" name="pass" id="pass" placeholder="Enter Password" required> 
+                                <input type="Password" class="form-control" name="pass" id="pass" placeholder="Masukan Password" required> 
                             <div class="form-check mb-2 mr-sm-2">
-                                <label class="form-check-label">
-                                <input class="form-check-input "type="checkbox"> Remember me
-                                </label>
                             </div>  
                         </div>
                         <button type="submit" class="btn btn-primary btn-block btn-rounded" name="btn_login">Log in</button>
                         <hr>
-                        
+
                     </form>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-12"></div>

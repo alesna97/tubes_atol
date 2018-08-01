@@ -53,7 +53,7 @@
                     </button>
                         </div>
                         <div class="col text-center">
-                            <h4 class="text-secondary"> Sistem Kepegawaian</h4>
+                            <h4 class="text-secondary"> Aplikasi Kepegawaian</h4>
                         </div> 
                         <div class="col">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">

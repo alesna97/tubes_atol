@@ -6,15 +6,17 @@
     background: #f9fafc;
     font-family: 'Poppins', sans-serif;  
 }
+.bg1{
+    background: #ffffff;
+    font-family: 'Poppins', sans-serif;  
+}
 
 .formstyle1{
-    border: 1px grey solid;
-    border-radius: 25px;
+    /*border: 1px grey solid;
+    border-radius: 25px;*/
     padding:50px 80px 50px 80px;
     margin-top: 10px;
-    background: #f8f9fa;
-    border:none;
-    box-shadow: 1px 1px 1px 3px rgba(0.1, 0.1, 0.1, 0.1);
+    /*box-shadow: 1px 1px 1px 3px rgba(0.1, 0.1, 0.1, 0.1);*/
 }
 .logo-25{
     height: 25px;
@@ -30,9 +32,9 @@
 }
 
 /* ICON STYLE */
-.icn-10{
-    height: 10px;
-    width: 10px;
+.icn-15{
+    height: 15px;
+    width: 15px;
 }
 .icn-20{
     height: 25px;

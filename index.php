@@ -3,6 +3,6 @@
     if(!empty($_SESSION['username'])){
         header('location:view/dashboard.php');
         }else{
-		header("location:view/welcome.php");
+		header("location:view/login.php");
 	}
 ?>

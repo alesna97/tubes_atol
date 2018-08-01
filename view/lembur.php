@@ -16,7 +16,7 @@
                 <div class="col">
                     <div class="text-right">
                     <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#addData">
-                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_26px.png" class="icn-10"> Tambah</div>
+                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_24px.png" class="icn-15"> Tambah</div>
                         </button></div>
                             <!-- ADD DATA -->
                                     <div class="modal fade" id="addData">

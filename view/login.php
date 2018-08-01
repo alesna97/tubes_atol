@@ -17,24 +17,24 @@
 
 	</head>
     <body class="bg">
-        <!-- ADD NAVBAR -->
         <?php
             include "../navbar.html";
         ?>
-        <!-- END NAVBAR -->
         <div class="container-fluid">
-            <div class="row">  
+            <div class="row"> 
                 <div class="col-md-4 col-xs-4 col-sm-12" ></div>
                 <div class="col-md-4 col-xs-4 col-sm-12">
                     <form id="formlogin" action="../config/login_proc.php" method="POST" target="_SELF" class="formstyle1">
-                        <h2 style="text-align: center;">Login</h1>
+                        <div class="text-center">
+                            <h4 class="text-dark"> Almanac Store </h4>
+                        </div>
                         <hr>
                         <div class="form-group">      
-                                <label for="username"> Username </label> 
+                                <label for="username"> Username :</label> 
                                 <input type="text" class="form-control" name="user" placeholder="Enter Username" id="username" required>
                         </div>
                         <div class="form-group">
-                            <label for="Password">Password</label>
+                            <label for="Password"> Password :</label>
                                 <input type="Password" class="form-control" name="pass" id="pass" placeholder="Enter Password" required> 
                             <div class="form-check mb-2 mr-sm-2">
                                 <label class="form-check-label">
@@ -44,6 +44,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-block btn-rounded" name="btn_login">Log in</button>
                         <hr>
+                        
                     </form>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-12"></div>

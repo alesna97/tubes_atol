@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
+        <title>Aplikasi Kepegawaian Almanac Store</title>
+        <link rel="icon" href="../asset/images/logo.png">
         <link rel="stylesheet" href="../asset/css/bootstrap.css">
         <link rel="stylesheet" href="../asset/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="../asset/css/style1.css">

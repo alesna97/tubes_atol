@@ -12,7 +12,11 @@
         <script src="../asset/js/jquery.min.js"></script>
         <script src="../asset/js/popper.min.js"></script>
         <script src="../asset/js/bootstrap.min.js"></script>
-
+        <script type="text/javascript">
+             function updateTextInput(val) {
+                document.getElementById('jumlahcuti').value=val; 
+             }
+        </script>
 	</head>
 <body class="bg"> 
         <div class="wrapper">

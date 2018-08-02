@@ -16,7 +16,7 @@
 			header("location:../view/dashboard.php");
 			}else{
 				//echo "GAGAL LOGIN !";
-				echo "password atau username tidak ditemukan>";
+				echo '<script>window.alert("Maaf, Username atau Password anda salah!");window.location=("../index.php");</script>';
 			}
 		}
 		

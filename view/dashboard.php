@@ -8,21 +8,29 @@
         <div class="row" style="padding: 20px;">
                <img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> <h5>Dashboard</h5>
         </div>
-		<div class="row text-right">
+		<div class="row text-right font-weight-bold">
                 <div class="col">
                     <div class="card bg-danger text-light" style="padding: 10px">
-                    <?php
+                        <div class="card-header"><h4>Jumlah Pegawai</h4> 
+                            <div class="row">
+                        <div class="col text-left">
+                            <div class="font-weight-normal">Total <br></div>
+                             
+                         <?php
                         // GET JUMLAH PEGAWAI
                         $selectPegawai = "SELECT id_pegawai FROM pegawai ";
                         $res = mysqli_query($conn, $selectPegawai);
                         $jumlah = mysqli_num_rows($res);
-                    ?> 
-                        <div class="card-header"><h4>Jumlah Pegawai</h4> 
-                            <?php echo "$jumlah" ?> orang
+                        echo "$jumlah Orang"
+                        ?> 
+                        </div>
+                        <div class="col">
                             <img src="../asset/icons/icons8_Customer_50px_1.png">
                         </div>
-                        </div>
+                    </div>
+                    </div>
                 </div>
+            </div>
                 <div class="col ">
                     <div class="card bg-primary text-light" style="padding: 10px"> 
                         <div class="card-header">
@@ -69,19 +77,17 @@
             <hr>
             <div class="container-fluid">
             <div class="row">
-                <img class="icn-20" src="../asset/icons/icons8_Administrative_Tools_50px.png">
-                <h5>Pengaturan Admin</h5>
-            </div>
-            <div class="row">
-                <div class="col">
-                </div>
-                <div class="col">
+                <div class="col col-sm-4">
+                <div id="accordion">
                     <div class="card">
-                        <div class="card-header">
-                            Ganti password
-                        </div>
-                        <div class="card-body" style="padding: 10px;">
-                            <form action="../config/ganti_pass.php" method="POST">
+                      <div class="card-header">
+                        <a class="card-link text-secondary " data-toggle="collapse" href="#collapseOne">
+                          Ganti Password
+                        </a>
+                      </div>
+                      <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          <form action="../config/ganti_pass.php" method="POST">
                                 <div class="form-group">
                                     <label for="password"> Password Lama : </label>
                                     <input type="password" name="pass_lama" class="form-control">
@@ -96,6 +102,68 @@
                                 </center>
                             </form>
                         </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col">
+                 <!-- FUNGSI CHART -->
+                        <?php
+                        $sql = "SELECT nama_jabatan, COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan GROUP BY pegawai.id_jabatan";
+                            $res = mysqli_query($conn, $sql);
+                                while ($fetchdata = mysqli_fetch_array($res)) { ?>
+                                 <div><?php $fetchdata["nama_jabatan"];?></div>
+                                 <div><?php $fetchdata["jumlah"];?></div>
+                        <?php } ?>
+
+                    <script type="text/javascript">
+                        window.onload = function () {
+
+                        var chart = new CanvasJS.Chart("chartContainer", {
+                            theme: "light2", // "light2", "dark1", "dark2"
+                            animationEnabled: true, // change to true      
+                            title:{
+                                text: "Jumlah Pegawai Berdasarkan Jabatan"
+                            },
+                            data: [
+                            {
+                                /* Change type to "bar", "area", "spline", "pie",etc.
+                                                    “line”
+                                                    “column”
+                                                    “bar”
+                                                    “area”
+                                                    “spline”
+                                                    “splineArea”
+                                                    “stepLine”
+                                                    “scatter”
+                                                    “bubble”
+                                                    “stackedColumn”
+                                                    “stackedBar”
+                                                    “stackedArea”
+                                                    “stackedColumn100”
+                                                    “stackedBar100”
+                                                    “stackedArea100”
+                                                    “pie”
+                                                    “doughnut”
+                                */
+                                type: "doughnut",
+                                dataPoints: [
+                                    { label: "CEO",  y: 10  },
+                                    { label: "Director", y: 15  },
+                                    { label: "Store Manager", y: 25  },
+                                    { label: "Asisten Manager",  y: 30  },
+                                    { label: "Supervisor",  y: 30  },
+                                    { label: "Staff",  y: 28  }
+                                ]
+                            }
+                            ]
+                        });
+                        chart.render();
+
+                        }
+                    </script>
+                    <div class="card">
+                    <div id="chartContainer" style="height: 250px; width: 100%;"></div>
                     </div>
                 </div>
                 <div class="col">

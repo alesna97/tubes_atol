@@ -15,7 +15,6 @@
         <script src="../asset/js/jquery.min.js"></script>
         <script src="../asset/js/popper.min.js"></script>
         <script src="../asset/js/bootstrap.min.js"></script>
-
 	</head>
     <body class="bg">
         <div class="navbar navbar-expand-sm bg-light navbar-light justify-content-center">

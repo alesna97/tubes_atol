@@ -12,15 +12,12 @@ if (isset($_POST['btn_tambah_pegawai'])) {
     $alamat=$_POST['alamat'];
 
     if (empty($id_pegawai) || empty($nama_pegawai) || empty($id_jabatan) || empty($tgl_lahir) || empty($jk) || empty($no_hp) || empty($email) || empty($alamat)) {
-        die("Maaf, anda harus mengisi data dengan lengkap");
-        echo "<br><a href=../view/pegawai.php>Kembali</a>";
+        echo '<script>window.alert("Maaf, anda harus mengisi dat adengan lengkap");window.location=("../view/pegawai.php");</script>';
     } else {
         if (is_numeric($nama_pegawai)) {
-            die("Maaf, nama harus berupa huruf");
-            echo "<br><a href=../view/pegawai.php>Kembali</a>";
+            echo '<script>window.alert("Maaf, nama pegawai masih kosong");window.location=("../view/pegawai.php");</script>';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            die("Maaf, email tidak valid");
-            echo "<br><a href=../view/pegawai.php>Kembali</a>"; 
+            echo '<script>window.alert("Maaf, email tidak valid");window.location=("../view/pegawai.php.php");</script>'; 
         } else {
             //Insert Data
             $sql = "INSERT INTO pegawai 
@@ -69,15 +66,12 @@ if (isset($_POST['btn_simpan_pegawai'])) {
     $alamat=$_POST['alamat'];
 
     if (empty($id_pegawai) || empty($nama_pegawai) || empty($id_jabatan) || empty($tgl_lahir) || empty($jk) || empty($no_hp) || empty($email) || empty($alamat)) {
-        die("Maaf, anda harus mengisi data dengan lengkap");
-        echo "<br><a href=../view/pegawai.php>Kembali</a>";
+        echo '<script>window.alert("Maaf, anda harus mengisi data adengan lengkap");window.location=("../view/pegawai.php");</script>';
     } else {
         if (is_numeric($nama_pegawai)) {
-            die("Maaf, nama harus berupa huruf");
-            echo "<br><a href=../view/pegawai.php>Kembali</a>";
+            echo '<script>window.alert("Maaf, anda harus mengisi data adengan lengkap");window.location=("../view/pegawai.php");</script>';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            die("Maaf, email tidak valid");
-            echo "<br><a href=../view/pegawai.php>Kembali</a>"; 
+            echo '<script>window.alert("Maaf, anda harus mengisi data adengan lengkap");window.location=("../view/pegawai.php");</script>';
         } else {
             //Insert Data
             $sql = "UPDATE pegawai 
@@ -122,11 +116,10 @@ if (isset($_POST['btn_simpan_cuti'])) {
     }
 
     if (!is_numeric($jumlah_cuti)) {
-        die("Maaf, jumlah cuti harus berupa angka");
-        echo "<br><a href=../view/pegawai.php>Kembali</a>";
+        echo '<script>window.alert("Maaf, anda harus mengisi data adengan lengkap");window.location=("../view/cuti.php");</script>';
     } elseif ($jumlah_cuti > 4 || $jumlah_cuti < 0) {
         die("Maaf, jumlah cuti harus sekitar angka 0 sampai 4");
-        echo "<br><a href=../view/pegawai.php>Kembali</a>";
+        echo '<script>window.alert("Maaf, anda harus mengisi data adengan lengkap");window.location=("../view/cuti.php");</script>';
     } else {
         //Insert Data
         $sql = "UPDATE cuti 
@@ -147,8 +140,7 @@ if (isset($_POST['btn_simpan_lembur'])) {
     $jumlah_jam_lembur = $_POST['jumlah_jam_lembur'];
 
     if (!is_numeric($jumlah_jam_lembur)) {
-        die("Maaf, jumlah cuti harus berupa angka");
-        echo "<br><a href=../view/pegawai.php>Kembali</a>";
+        echo '<script>window.alert("Maaf, anda harus mengisi data adengan lengkap");window.location=("../view/lembur.php");</script>';
     } else {
         //Insert Data
         $sql = "UPDATE lembur 

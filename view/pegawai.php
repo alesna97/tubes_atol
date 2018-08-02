@@ -25,27 +25,30 @@
                                                 <h4 class="modal-title"> Tambah Data Pegawai </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="../function/tambah_pegawai.php" name="" method="POST">
+                                                <form action="../function/function_pegawai.php" name="" method="POST">
                                                     <div class="form-group">
                                                         <label for="nama">ID :</label>
-                                                        <input type="text" name="id" class="form-control" id="id">
+                                                        <input type="text" name="id_pegawai" class="form-control" id="id">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama">Nama :</label>
-                                                        <input type="text" name="nama" class="form-control" id="nama">
+                                                        <input type="text" name="nama_pegawai" class="form-control" id="nama">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama">Jabatan :</label>
-                                                        <select name="jabatan" class="custom-select">
+                                                        <select name="id_jabatan" class="custom-select">
                                                                 <option value="pilih_jabatan"> Pilih Jabatan </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
+                                                                <option value="J1"> CEO </option>
+                                                                <option value="J2"> Director </option>
+                                                                <option value="J3"> Store Manager </option>
+                                                                <option value="J4"> Asisten Manager </option>
+                                                                <option value="J5"> Supervisor </option>
+                                                                <option value="J6"> Staff </option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama">Tanggal Lahir :</label>
-                                                        <input type="date" name="tanggal_lahir" class="form-control" id="alamat">
+                                                        <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir">
                                                     </div>
                                                     <label for="jenis_kelamin">Jenis Kelamin :</label>
                                                     <div class="form-check">
@@ -61,6 +64,10 @@
                                                     <div class="form-group">
                                                         <label for="no_hp">No Hp :</label>
                                                         <input type="text" name="no_hp" class="form-control" id="no_hp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email">Email :</label>
+                                                        <input type="text" name="email" class="form-control" id="email">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="alamat">Alamat :</label>
@@ -95,14 +102,32 @@
             		</tr>
             		<tbody>
                     <?php 
-                        $selectPegawai = "SELECT id_pegawai, nama_pegawai, nama_jabatan, tanggal_lahir, jenis_kelamin, no_hp, alamat FROM pegawai, jabatan WHERE pegawai.id_jabatan = jabatan.id_jabatan";
+                        $selectPegawai = "SELECT id_pegawai, pegawai.id_jabatan, nama_jabatan, nama_pegawai, tanggal_lahir, jenis_kelamin, no_hp, email, alamat FROM pegawai, jabatan WHERE pegawai.id_jabatan=jabatan.id_jabatan";
                         $getPegawai = mysqli_query($conn, $selectPegawai);
+                        function tanggal_indo($tanggal)
+                        {
+                            $bulan = array (1 =>   'Januari',
+                                        'Februari',
+                                        'Maret',
+                                        'April',
+                                        'Mei',
+                                        'Juni',
+                                        'Juli',
+                                        'Agustus',
+                                        'September',
+                                        'Oktober',
+                                        'November',
+                                        'Desember'
+                                    );
+                            $split = explode('-', $tanggal);
+                            return $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
+                        }
                         while ($fetchPegawai = mysqli_fetch_array($getPegawai)) { ?>
                             <tr>
                                 <td><?= $fetchPegawai["id_pegawai"] ?></td>
                                 <td><?= $fetchPegawai["nama_pegawai"] ?></td>
                                 <td><?= $fetchPegawai["nama_jabatan"] ?></td>
-                                <td><?= date('d F Y', strtotime('$fetchPegawai["tanggal_lahir"]')); ?></td>
+                                <td><?= tanggal_indo($fetchPegawai["tanggal_lahir"]); ?></td>
                                 <td><?= $fetchPegawai["jenis_kelamin"] ?></td>
                                 <td><?= $fetchPegawai["no_hp"] ?></td>
                                 <td><?= $fetchPegawai["alamat"] ?></td>
@@ -114,44 +139,59 @@
                                                     <h4 class="modal-title"> Ubah Data Pegawai </h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="../function/ubah_pegawai.php" name="" method="POST">
+                                                    <form action="../function/function_pegawai.php" name="" method="POST">
                                                         <input type="hidden" name="ubah_id" value="<?= $fetchPegawai['id_pegawai'] ?>">
                                                         <div class="form-group">
                                                             <label for="nama">ID :</label>
-                                                            <input type="text" name="id" class="form-control" id="id" value="<?= $fetchPegawai['id_pegawai'] ?>">
+                                                            <input type="text" name="id_pegawai" class="form-control" id="id" value="<?= $fetchPegawai['id_pegawai'] ?>" readonly>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Nama :</label>
-                                                            <input type="text" name="nama" class="form-control" id="nama"  value="<?= $fetchPegawai['nama_pegawai'] ?>">
+                                                            <input type="text" name="nama_pegawai" class="form-control" id="nama"  value="<?= $fetchPegawai['nama_pegawai'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="nama">Jabatan :</label>
-                                                            <select name="jabatan" class="custom-select">
-                                                                    <option value="pilih_jabatan"> Pilih Jabatan </option>
-                                                                    <option value="staff"> Staff </option>
-                                                                    <option> dummy </option>
-                                                                    <option> dummy </option>
+                                                            <select name="id_jabatan" class="custom-select">
+                                                                <option value="<?= $fetchPegawai['id_jabatan'] ?>"> <?= $fetchPegawai['nama_jabatan'] ?> </option>
+                                                                <option value="J1"> CEO </option>
+                                                                <option value="J2"> Director </option>
+                                                                <option value="J3"> Store Manager </option>
+                                                                <option value="J4"> Asisten Manager </option>
+                                                                <option value="J5"> Supervisor </option>
+                                                                <option value="J6"> Staff </option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
                                                         <label for="nama">Tanggal Lahir :</label>
-                                                        <input type="date" name="tanggal_lahir" class="form-control" id="alamat">
-                                                    </div>
-                                                    <label for="jenis_kelamin">Jenis Kelamin :</label>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input type="radio" class="form-check-input" name="jenis_kelamin" value="Laki - Laki" checked>Laki - Laki
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                      <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="jenis_kelamin" value="Perempuan">Perempuan
-                                                      </label>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="no_hp">No Hp :</label>
-                                                        <input type="text" name="no_hp" class="form-control" id="no_hp">
-                                                    </div>
+                                                        <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" value="<?= $fetchPegawai['tanggal_lahir'] ?>">
+                                                        </div>
+                                                        <label for="jenis_kelamin">Jenis Kelamin :</label>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                            <?php if ($fetchPegawai['jenis_kelamin'] == "Laki-Laki") {
+                                                                echo '<input type="radio" class="form-check-input" name="jenis_kelamin" value="Laki-Laki" checked>Laki - Laki';
+                                                            } else {
+                                                                echo '<input type="radio" class="form-check-input" name="jenis_kelamin" value="Laki-Laki">Laki - Laki';
+                                                            }?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                            <?php if ($fetchPegawai['jenis_kelamin'] == "Perempuan") {
+                                                                echo '<input type="radio" class="form-check-input" name="jenis_kelamin" value="Perempuan" checked>Perempuan';
+                                                            } else {
+                                                                echo '<input type="radio" class="form-check-input" name="jenis_kelamin" value="Perempuan">Perempuan';
+                                                            }?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="no_hp">No Hp :</label>
+                                                            <input type="text" name="no_hp" class="form-control" id="no_hp" value="<?= $fetchPegawai['no_hp'] ?>">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="email">Email :</label>
+                                                            <input type="text" name="email" class="form-control" id="email" value="<?= $fetchPegawai['email'] ?>">
+                                                        </div>
                                                         <div class="form-group">
                                                             <label for="nama">Alamat :</label>
                                                             <input type="text" name="alamat" class="form-control" id="alamat"  value="<?= $fetchPegawai['alamat'] ?>">
@@ -166,7 +206,7 @@
                                         </div>
                                     </div>
                                     <a data-toggle="modal" href="#hapusdata<?= $fetchPegawai['id_pegawai'] ?>"> Hapus </a>
-                                    <form action="../function/hapus_pegawai.php" method="POST">
+                                    <form action="../function/function_pegawai.php" method="POST">
                                     <div class="modal fade" id="hapusdata<?= $fetchPegawai['id_pegawai'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">

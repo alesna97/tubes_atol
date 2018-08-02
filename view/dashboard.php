@@ -124,32 +124,15 @@
                             data: [
                             {
                                 /* Change type to "bar", "area", "spline", "pie",etc.
-                                                    “line”
-                                                    “column”
-                                                    “bar”
-                                                    “area”
-                                                    “spline”
-                                                    “splineArea”
-                                                    “stepLine”
-                                                    “scatter”
-                                                    “bubble”
-                                                    “stackedColumn”
-                                                    “stackedBar”
-                                                    “stackedArea”
-                                                    “stackedColumn100”
-                                                    “stackedBar100”
-                                                    “stackedArea100”
-                                                    “pie”
-                                                    “doughnut”
                                 */
                                 type: "splineArea",
                                 dataPoints: [
-                                    { label: "CEO",  y: 3  },
-                                    { label: "Director", y: 2  },
-                                    { label: "Store Manager", y: 5  },
-                                    { label: "Asisten Manager",  y: 6  },
-                                    { label: "Supervisor",  y: 4 },
-                                    { label: "Staff",  y: 8  }
+                                    { label: "CEO",  y: 1  },
+                                    { label: "Director", y: 1  },
+                                    { label: "Store Manager", y: 1  },
+                                    { label: "Asisten Manager",  y: 1  },
+                                    { label: "Supervisor",  y: 1 },
+                                    { label: "Staff",  y: 4  }
                                 ]
                             }
                             ]

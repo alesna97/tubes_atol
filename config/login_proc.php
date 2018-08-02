@@ -16,9 +16,7 @@
 			header("location:../view/dashboard.php");
 			}else{
 				//echo "GAGAL LOGIN !";
-				echo "<script type='text/javascript'>
-						alert('Username atau password tidak ditemukan !');
-					  </script>";
+				echo "password atau username tidak ditemukan>";
 			}
 		}
 		

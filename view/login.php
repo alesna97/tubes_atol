@@ -27,7 +27,8 @@
             <div class="row"> 
                 <div class="col-md-4 col-xs-4 col-sm-12" ></div>
                 <div class="col-md-4 col-xs-4 col-sm-12">
-                    <form id="formlogin" action="../config/login_proc.php" method="POST" class="formstyle1">
+                    <form action="../config/login_proc.php" method="POST" class="formstyle1"
+                     target="_self">
                         <div class="text-center">
                             <h4 class="text-dark"> Almanac Store </h4>
                         </div>

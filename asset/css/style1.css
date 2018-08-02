@@ -1,10 +1,10 @@
            /*Layout Style*/
-@import url('https://fonts.googleapis.com/css?family=Archivo');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
 .bg{
     background: #f9fafc;
-    font-family: 'Archivo', sans-serif;  
+    font-family: 'Robot', sans-serif;  
 }
 
 .formstyle1{

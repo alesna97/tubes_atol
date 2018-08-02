@@ -37,6 +37,15 @@
                                 $bonus_cuti = $fetchGaji["kuota_cuti"] * 25000;
                                 $bonus_lembur = $fetchGaji["jumlah_jam_lembur"] * 5000;
                                 $total_gaji = $fetchGaji["gaji_jabatan"] + $bonus_lembur + $bonus_cuti;
+
+                                $id_gaji = $fetchGaji["id_gaji"];
+                                $updateGaji = "UPDATE gaji SET total_gaji=$total_gaji WHERE id_gaji = $id_gaji";
+                                if ($conn->query($updateGaji) === TRUE) {
+                                    
+                                } else {
+                                    echo "Error: ".$sql."<br>".$conn->error;
+                                }
+
                                 echo "Rp. " . number_format($total_gaji,2,',','.'); 
                                 ?></td>
                             </tr>

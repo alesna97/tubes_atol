@@ -9,8 +9,7 @@
                 <div class="col">
                     <img class="icn-20" src="../asset/icons/icons8_Administrative_Tools_50px.png">/ Data Pegawai
                 </div>
-                <div class="col">
-                        
+                <div class="col">       
                 </div>
                 <div class="col">
                     <div class="text-right">

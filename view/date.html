@@ -10,40 +10,22 @@
         document.getElementById("jam").innerHTML = tanggal.getHours();
         document.getElementById("menit").innerHTML = tanggal.getMinutes();
         document.getElementById("detik").innerHTML = tanggal.getSeconds();
-        /*
-        var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-        var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
-
-        var date = new Date();
-        var day = date.getDate();
-        var month = date.getMonth();
-        var thisDay = date.getDay(),
-        thisDay = myDays[thisDay];
-        var yy = date.getYear();
-        var year = (yy < 1000) ? yy + 1900 : yy;
-        document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
-
-        document.getElementById("hari").innerHTML = day;
-        document.getElementById("tanggal").innerHTML = months[month];
-        document.getElementById("tahun").innerHTML = year; */
     }
 </script>
 </head>
 
 <style>
-    #jam-digital{overflow:hidden; width:350px}
-    #hours{float:left; width:100px; height:50px; margin-right:25px}
-    #minute{float:left; width:100px; height:50px; }
-    #second{float:right; width:100px; height:50px;  margin-left:25px}
-    #jam-digital p{color:#FFF; font-size:36px; text-align:center; margin-top:4px}
+    
 </style>
 
 <body onLoad="waktu()">
-    <div id="jam-digital">
-        <div id="hours"><p id="jam"></p></div> 
-        <div id="minute"><p id="menit"></p></div>
-        <div id="second"><p id="detik"></p></div>
-    </div>
+    Jam Menit Detik
+    <br>
+    <center>
+    <p id="jam" style="float: left; margin-right: 20px;margin-left: 10px;"></p>
+    <p id="menit" style="float: left; margin-right: 20px;"></p>
+    <p id="detik" style="float: left; "></p>
+    </center>
 </table>
 </body>
 </html>

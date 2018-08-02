@@ -24,14 +24,22 @@
                         </div>
                 </div>
                 <div class="col ">
-                    <div class="card bg-primary text-success" style="padding: 10px"> 
+                    <div class="card bg-primary text-light" style="padding: 10px"> 
                         <div class="card-header">
-                            <h4 class="text-light text-center">Clock<h4>
-                         <?php
+
+                            <h4>Waktu</h4>
+                        <div class="row">
+                            <div class="col">
+                                <?php
                                 include "date.html";
-                         ?>
+                                 ?>
+                            </div>
+                            <div class="col">
+                                <img src="../asset/icons/icons8_Clock_50px.png">
+                            </div>
                         </div>
                     </div>
+                </div>
                 </div>
                 <div class="col"> 
                      <div class="card bg-success text-light" style="padding: 10px"> 
@@ -46,8 +54,8 @@
                         while ($fetchlembur = mysqli_fetch_array($res)) { ?>
                             <tr>
                                 
-                                <td><?= $fetchlembur["nama_pegawai"]?></td>
-                            </tr><br>
+                                <td><div class="small"><?= $fetchlembur["nama_pegawai"]?></div></td>
+                            </tr>
                                 <td><?= $fetchlembur["max"] ?> Jam </td>
                         <?php }?>
                     </div>

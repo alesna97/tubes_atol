@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2018 at 04:00 PM
+-- Generation Time: Aug 02, 2018 at 08:28 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -50,7 +50,7 @@ INSERT INTO `admin` (`username`, `email`, `password`) VALUES
 --
 
 CREATE TABLE `cuti` (
-  `id_cuti` varchar(5) NOT NULL,
+  `id_cuti` int(11) NOT NULL,
   `id_pegawai` varchar(5) NOT NULL,
   `jumlah_cuti` int(11) NOT NULL,
   `kuota_cuti` int(11) NOT NULL
@@ -61,7 +61,17 @@ CREATE TABLE `cuti` (
 --
 
 INSERT INTO `cuti` (`id_cuti`, `id_pegawai`, `jumlah_cuti`, `kuota_cuti`) VALUES
-('C1', 'P03', 4, 4);
+(1, 'P01', 1, 3),
+(2, 'P02', 0, 4),
+(4, 'P03', 0, 4),
+(5, 'P04', 0, 4),
+(6, 'P05', 0, 4),
+(7, 'P06', 0, 4),
+(8, 'P07', 0, 4),
+(9, 'P08', 4, 0),
+(10, 'P09', 0, 4),
+(11, 'P10', 2, 2),
+(18, 'P11', 0, 4);
 
 -- --------------------------------------------------------
 
@@ -81,16 +91,17 @@ CREATE TABLE `gaji` (
 --
 
 INSERT INTO `gaji` (`id_gaji`, `id_pegawai`, `id_jabatan`, `total_gaji`) VALUES
-(1, 'P01', 'J1', 0),
-(2, 'P02', 'J4', 0),
-(3, 'P03', 'J3', 0),
-(4, 'P04', 'J2', 0),
-(5, 'P05', 'J5', 0),
-(6, 'P06', 'J6', 0),
-(7, 'P07', 'J6', 0),
-(8, 'P08', 'J6', 0),
-(9, 'P09', 'J6', 0),
-(10, 'P10', 'J6', 0);
+(1, 'P01', 'J1', 12175000),
+(2, 'P02', 'J4', 4735000),
+(3, 'P03', 'J3', 5200000),
+(4, 'P04', 'J2', 7100000),
+(5, 'P05', 'J5', 3465000),
+(6, 'P06', 'J6', 2100000),
+(7, 'P07', 'J6', 2335000),
+(8, 'P08', 'J6', 3475000),
+(9, 'P09', 'J6', 3600000),
+(10, 'P10', 'J5', 3250000),
+(22, 'P11', 'J6', 2120000);
 
 -- --------------------------------------------------------
 
@@ -123,7 +134,7 @@ INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `gaji_jabatan`) VALUES
 --
 
 CREATE TABLE `lembur` (
-  `id_lembur` varchar(5) NOT NULL,
+  `id_lembur` int(11) NOT NULL,
   `id_pegawai` varchar(5) NOT NULL,
   `jumlah_jam_lembur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -133,9 +144,17 @@ CREATE TABLE `lembur` (
 --
 
 INSERT INTO `lembur` (`id_lembur`, `id_pegawai`, `jumlah_jam_lembur`) VALUES
-('L1', 'P07', 47),
-('L2', 'P05', 33),
-('L3', 'P02', 67);
+(1, 'P01', 20),
+(2, 'P02', 67),
+(3, 'P03', 0),
+(4, 'P04', 0),
+(5, 'P05', 33),
+(6, 'P06', 0),
+(7, 'P07', 47),
+(8, 'P08', 295),
+(9, 'P09', 300),
+(10, 'P10', 0),
+(11, 'P11', 4);
 
 -- --------------------------------------------------------
 
@@ -168,7 +187,8 @@ INSERT INTO `pegawai` (`id_pegawai`, `id_jabatan`, `nama_pegawai`, `tanggal_lahi
 ('P07', 'J6', 'Stanislaw Franks', '1997-10-01', 'Laki-Laki', '085721983124', 'stanislaw@yahoo.com', 'Jl. Tubagus Ismail Tengah-Tengah No. X1'),
 ('P08', 'J6', 'Atticus Dennis', '1997-03-24', 'Laki-Laki', '087436356547', 'atticusdennis@outlook.com', 'Jl. Sekeloa Selatan No. 900'),
 ('P09', 'J6', 'Fikri Fatoni', '1997-01-15', 'Laki-Laki', '081931390150', 'tbfikrif@gmail.com', 'Bandung'),
-('P10', 'J6', 'Vantam Nito', '1999-03-18', 'Laki-Laki', '+628193139015', 'vantamnito@gmail.com', 'Dago');
+('P10', 'J5', 'Vantam Nito', '1999-03-18', 'Laki-Laki', '+628193139015', 'vantamnito@gmail.com', 'Dago'),
+('P11', 'J6', 'Vantam Nitosss', '1998-06-15', 'Perempuan', '+628193139015', 'tbfikrif@gmail.com', 'Bandung');
 
 --
 -- Triggers `pegawai`
@@ -184,6 +204,12 @@ VALUES (DEFAULT,
         NEW.id_pegawai,
         NEW.id_jabatan,
         0)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `trig_ubah_pegawai` AFTER UPDATE ON `pegawai` FOR EACH ROW UPDATE gaji
+SET id_jabatan = NEW.id_jabatan
+WHERE id_pegawai = OLD.id_pegawai
 $$
 DELIMITER ;
 
@@ -237,10 +263,22 @@ ALTER TABLE `pegawai`
 --
 
 --
+-- AUTO_INCREMENT for table `cuti`
+--
+ALTER TABLE `cuti`
+  MODIFY `id_cuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `gaji`
 --
 ALTER TABLE `gaji`
-  MODIFY `id_gaji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_gaji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `lembur`
+--
+ALTER TABLE `lembur`
+  MODIFY `id_lembur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

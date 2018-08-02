@@ -24,8 +24,16 @@ if (isset($_POST['btn_tambah_pegawai'])) {
         } else {
             //Insert Data
             $sql = "INSERT INTO pegawai 
-            VALUES ('$id_pegawai', '$id_jabatan', '$nama_pegawai', '$tgl_lahir', '$jk', '$no_hp', '$email', '$alamat')";
-    
+            VALUES ('$id_pegawai', '$id_jabatan', '$nama_pegawai', '$tgl_lahir', '$jk', '$no_hp', '$email', '$alamat');";
+            mysqli_query($conn, $sql);
+
+            $sql = "INSERT INTO cuti 
+            VALUES (DEFAULT, '$id_pegawai', 0, 4);";
+            mysqli_query($conn, $sql);
+
+            $sql = "INSERT INTO lembur 
+            VALUES (DEFAULT, '$id_pegawai', 0);";
+
             if ($conn->query($sql) === TRUE) {
                 //echo "<script>window.alert('Pegawai Berhasil ditambahkan.');</script>";
                 header('location:../view/pegawai.php');
@@ -113,28 +121,45 @@ if (isset($_POST['btn_simpan_cuti'])) {
             break;
     }
 
-    if (empty(jumlah_cuti)) {
-        die("Maaf, anda harus mengisi data dengan lengkap");
+    if (!is_numeric($jumlah_cuti)) {
+        die("Maaf, jumlah cuti harus berupa angka");
+        echo "<br><a href=../view/pegawai.php>Kembali</a>";
+    } elseif ($jumlah_cuti > 4 || $jumlah_cuti < 0) {
+        die("Maaf, jumlah cuti harus sekitar angka 0 sampai 4");
         echo "<br><a href=../view/pegawai.php>Kembali</a>";
     } else {
-        if (!is_numeric($jumlah_cuti)) {
-            die("Maaf, jumlah cuti harus berupa angka");
-            echo "<br><a href=../view/pegawai.php>Kembali</a>";
-        } elseif ($jumlah_cuti > 4 || $jumlah_cuti < 0) {
-            die("Maaf, jumlah cuti harus sekitar angka 0 sampai 4");
-            echo "<br><a href=../view/pegawai.php>Kembali</a>";
+        //Insert Data
+        $sql = "UPDATE cuti 
+        SET jumlah_cuti = '$jumlah_cuti', kuota_cuti = '$sisa_cuti'
+        WHERE id_cuti='$id_cuti'";
+
+        if ($conn->query($sql) === TRUE) {
+            //echo "<script>window.alert('Pegawai Berhasil ditambahkan.');window.location.href='../view/pegawai.php';</script>";
+            header('location:../view/cuti.php');
         } else {
-            //Insert Data
-            $sql = "UPDATE cuti 
-            SET jumlah_cuti = '$jumlah_cuti', kuota_cuti = '$sisa_cuti'
-            WHERE id_cuti='$id_cuti'";
-    
-            if ($conn->query($sql) === TRUE) {
-                //echo "<script>window.alert('Pegawai Berhasil ditambahkan.');window.location.href='../view/pegawai.php';</script>";
-                header('location:../view/cuti.php');
-            } else {
-                echo "Error: ".$sql."<br>".$conn->error;
-            }
+            echo "Error: ".$sql."<br>".$conn->error;
+        }
+    }
+}
+
+if (isset($_POST['btn_simpan_lembur'])) {
+    $id_lembur = $_POST['ubah_id'];
+    $jumlah_jam_lembur = $_POST['jumlah_jam_lembur'];
+
+    if (!is_numeric($jumlah_jam_lembur)) {
+        die("Maaf, jumlah cuti harus berupa angka");
+        echo "<br><a href=../view/pegawai.php>Kembali</a>";
+    } else {
+        //Insert Data
+        $sql = "UPDATE lembur 
+        SET jumlah_jam_lembur = '$jumlah_jam_lembur'
+        WHERE id_lembur='$id_lembur'";
+
+        if ($conn->query($sql) === TRUE) {
+            //echo "<script>window.alert('Pegawai Berhasil ditambahkan.');window.location.href='../view/pegawai.php';</script>";
+            header('location:../view/lembur.php');
+        } else {
+            echo "Error: ".$sql."<br>".$conn->error;
         }
     }
 }

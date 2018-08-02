@@ -14,42 +14,7 @@
                         
                 </div>
                 <div class="col">
-                    <div class="text-right">
-                    <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#addData">
-                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_24px.png" class="icn-15"> Tambah</div>
-                        </button></div>
-                            <!-- ADD DATA -->
-                                    <div class="modal fade" id="addData">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"> Tambah Data Lembur </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="" name="" method="POST">
-                                                    <div class="form-group">
-                                                        <label for="nama">Nama Pegawai :</label>
-                                                        <select name="nama_pegawai" class="custom-select">
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Jumlah jam lembur :</label>
-                                                        <input type="text" name="jumlah_jam_lembur" class="form-control" id="alamat">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_lembur">Submit</button>
-                                                    <button type="reset" class="btn btn-secondary btn-rounded btn-primary btn-block" >Reset</button>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-block btn-rounded btn-danger" data-dismiss="modal">Tutup</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    
                 </div>
             </div>
         <div class="row">
@@ -63,30 +28,30 @@
             		</tr>
                 </thead>
             		<tbody>
-                        <tr>
-            			<td>00129</td>
-            			<td>Dummy</td>
-                        <td><a href="#"> Ubah </a>
-                                <div class="modal fade" id="ubahdata">
+                        <?php 
+                            $selectLembur = "SELECT * FROM lembur, pegawai WHERE lembur.id_pegawai=pegawai.id_pegawai";
+                            $getLembur = mysqli_query($conn, $selectLembur);
+                            while ($fetchLembur = mysqli_fetch_array($getLembur)) { ?>
+                            <tr>
+                                <td><?= $fetchLembur["nama_pegawai"] ?></td>
+                                <td><?= $fetchLembur["jumlah_jam_lembur"] ?></td>
+                                <td><a data-toggle="modal" href="#ubahdata<?= $fetchLembur['id_lembur'] ?>"> Ubah </a>
+                                <div class="modal fade" id="ubahdata<?= $fetchLembur['id_lembur'] ?>">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title"> Ubah Data Lembur </h4>
+                                                <h4 class="modal-title"> Ubah Data Cuti </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="" name="" method="POST">
+                                                <form action="../function/function_pegawai.php" name="" method="POST">
+                                                <input type="hidden" name="ubah_id" value="<?= $fetchLembur['id_lembur'] ?>">
                                                     <div class="form-group">
                                                         <label for="nama">Nama Pegawai :</label>
-                                                        <select name="nama_pegawai" class="custom-select">
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                        </select>
+                                                        <input type="text" name="nama_pegawai" class="form-control" id="nama_pegawai" value="<?= $fetchLembur['nama_pegawai'] ?>" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="nama">Jumlah jam lembur :</label>
-                                                        <input type="text" name="jumlah_jam_lembur" class="form-control" id="alamat">
+                                                        <label for="jumlah_jam_lembur">Jumlah Jam Lembur :</label>
+                                                        <input type="number" min="0" max="300" name="jumlah_jam_lembur" class="form-control" id="jumlah_jam_lembur" value="<?= $fetchLembur['jumlah_jam_lembur'] ?>">
                                                     </div>
                                                     <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_simpan_lembur">Simpan</button>
                                                 </form>
@@ -97,27 +62,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            <a data-toggle="modal"href="#hapusdata"> Hapus </a>
-                                <form action="" method="POST">
-                                <div class="modal fade" id="hapusdata">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title text-warning"> Hapus Data </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                Anda yakin akan menghapus data ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_lembur">Ya</button>
-                                                <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </td>
-                        </tr>
+                                </td>
+                            </tr>
+                        <?php } ?>   
             		</tbody>
             </table>
         </div>

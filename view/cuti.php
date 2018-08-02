@@ -55,7 +55,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="jumlah_cuti">Jumlah Cuti :</label>
-                                                        <input type="number" name="jumlah_cuti" min="0" max="4" class="form-control" id="jumlahcuti" value="<?= $fetchCuti['jumlah_cuti'] ?>">
+                                                        <input type="number" name="jumlah_cuti" min="0" max="4" class="form-control" id="jumlah_cuti" value="<?= $fetchCuti['jumlah_cuti'] ?>">
                                                     </div>
                                                     <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_simpan_cuti">Simpan</button>
                                                 </form>

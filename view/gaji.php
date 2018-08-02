@@ -27,13 +27,18 @@
                 </thead>
             		<tbody>
                         <?php 
-                            $selectGaji = "SELECT * FROM gaji, pegawai, jabatan WHERE gaji.id_pegawai=pegawai.id_pegawai AND gaji.id_jabatan=jabatan.id_jabatan";
+                            $selectGaji = "SELECT * FROM gaji, pegawai, jabatan, cuti, lembur WHERE gaji.id_pegawai=pegawai.id_pegawai AND gaji.id_jabatan=jabatan.id_jabatan AND cuti.id_pegawai=pegawai.id_pegawai AND lembur.id_pegawai=pegawai.id_pegawai";
                             $getGaji = mysqli_query($conn, $selectGaji);
                             while ($fetchGaji = mysqli_fetch_array($getGaji)) { ?>
                             <tr>
                                 <td><?= $fetchGaji["nama_pegawai"] ?></td>
                                 <td><?= $fetchGaji["nama_jabatan"] ?></td>
-                                <td><?="Rp. " . number_format($fetchGaji["gaji_jabatan"],2,',','.'); ?></td>
+                                <td><?php 
+                                $bonus_cuti = $fetchGaji["kuota_cuti"] * 25000;
+                                $bonus_lembur = $fetchGaji["jumlah_jam_lembur"] * 5000;
+                                $total_gaji = $fetchGaji["gaji_jabatan"] + $bonus_lembur + $bonus_cuti;
+                                echo "Rp. " . number_format($total_gaji,2,',','.'); 
+                                ?></td>
                             </tr>
                         <?php } ?>
             		</tbody>

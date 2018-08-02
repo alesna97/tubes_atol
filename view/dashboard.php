@@ -8,7 +8,7 @@
         <div class="row" style="padding: 20px;">
                <img class="icn-20" src="../asset/icons/icons8_Dashboard_50px.png"> <h5>Dashboard</h5>
         </div>
-		<div class="row">
+		<div class="row text-right">
                 <div class="col">
                     <div class="card bg-danger text-light" style="padding: 10px">
                     <?php
@@ -17,13 +17,16 @@
                         $res = mysqli_query($conn, $selectPegawai);
                         $jumlah = mysqli_num_rows($res);
                     ?> 
-                        <div class="card-header"><h4>Jumlah Pegawai</h4> <?php echo "$jumlah" ?> orang</div>
-                    </div>
+                        <div class="card-header"><h4>Jumlah Pegawai</h4> 
+                            <?php echo "$jumlah" ?> orang
+                            <img src="../asset/icons/icons8_Customer_50px_1.png">
+                        </div>
+                        </div>
                 </div>
-                <div class="col">
+                <div class="col ">
                     <div class="card bg-primary text-success" style="padding: 10px"> 
                         <div class="card-header">
-                            <h4 class="text-light">Clock<h4>
+                            <h4 class="text-light text-center">Clock<h4>
                          <?php
                                 include "date.html";
                          ?>
@@ -32,7 +35,28 @@
                 </div>
                 <div class="col"> 
                      <div class="card bg-success text-light" style="padding: 10px"> 
-                        <div class="card-header"><h4>Informasi</h4> Blablabla</div>
+                        <div class="card-header"><h4>Jam Lembur Terlama</h4>
+                            <div class="row">
+                                <div class="col text-left">
+                             <?php
+                        // GET JUMLAH PEGAWAI
+                         $max = 'max';
+                        $selectPegawai = "SELECT nama_pegawai,max(jumlah_jam_lembur) as 'max' FROM pegawai JOIN lembur WHERE pegawai.id_pegawai = lembur.id_pegawai";
+                        $res = mysqli_query($conn, $selectPegawai);
+                        while ($fetchlembur = mysqli_fetch_array($res)) { ?>
+                            <tr>
+                                
+                                <td><?= $fetchlembur["nama_pegawai"]?></td>
+                            </tr><br>
+                                <td><?= $fetchlembur["max"] ?> Jam </td>
+                        <?php }?>
+                    </div>
+                    <div class="col">
+                        <img src="../asset/icons/icons8_account_48px.png">
+
+                    </div>
+                    </div>
+                        </div>
                     </div>           
                 </div>
             </div>

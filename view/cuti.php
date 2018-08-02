@@ -68,35 +68,33 @@
             		</tr>
                 </thead>
             		<tbody>
-                        <tr>
-            			<td>00129</td>
-            			<td>Dummy</td>
-            			<td>Dummy</td>
-                        <td><a data-toggle="modal" href=#ubahdata> Ubah </a>
-                                <div class="modal fade" id="ubahdata">
+                    <?php 
+                            $selectCuti = "SELECT * FROM cuti, pegawai WHERE cuti.id_pegawai=pegawai.id_pegawai";
+                            $getCuti = mysqli_query($conn, $selectCuti);
+                            while ($fetchCuti = mysqli_fetch_array($getCuti)) { ?>
+                            <tr>
+                                <td><?= $fetchCuti["nama_pegawai"] ?></td>
+                                <td><?= $fetchCuti["jumlah_cuti"] ?></td>
+                                <td><?= $fetchCuti['kuota_cuti'] ?></td>
+                                <td><a data-toggle="modal" href="#ubahdata<?= $fetchCuti['id_cuti'] ?>"> Ubah </a>
+                                <div class="modal fade" id="ubahdata<?= $fetchCuti['id_cuti'] ?>">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title"> Ubah Data Cuti </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="" name="" method="POST">
+                                                <form action="../function/function_pegawai.php" name="" method="POST">
+                                                <input type="hidden" name="ubah_id" value="<?= $fetchCuti['id_cuti'] ?>">
+                                                <input type="hidden" name="ubah_kuota" value="<?= $fetchCuti['kuota_cuti'] ?>">
+                                                <input type="hidden" name="cuti_saatini" value="<?= $fetchCuti['jumlah_cuti'] ?>">
                                                     <div class="form-group">
                                                         <label for="nama">Nama Pegawai :</label>
-                                                        <select name="nama_pegawai" class="custom-select">
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                        </select>
+                                                        <input type="text" name="nama_pegawai" class="form-control" id="nama_pegawai" value="<?= $fetchCuti['nama_pegawai'] ?>" readonly>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama">Jumlah Cuti :</label>
-                                                        <input type="text" name="jumlah_cuti" class="form-control" id="nama">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Kuota cuti :</label>
-                                                        <input type="text" name="kuota_cuti" class="form-control" id="alamat">
+                                                        <input type="text" name="jumlah_cuti" class="form-control" id="jumlah_cuti" value="<?= $fetchCuti['jumlah_cuti'] ?>">
                                                     </div>
                                                     <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_simpan_cuti">Simpan</button>
                                                 </form>
@@ -107,27 +105,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            <a data-toggle="modal"href="#hapusdata"> Hapus </a>
-                                <div class="modal fade" id="hapusdata">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title text-warning"> Hapus Data </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                Anda yakin akan menghapus data ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <form action="" method="POST">
-                                                <button type="submit" class="btn btn-rounded btn-primary" name="btn_hapus_cuti">Ya</button>
-                                                <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Tidak</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </td>
-                        </tr>                        
+                                </td>
+                            </tr>
+                        <?php } ?>                    
             		</tbody>
             </table>
         </div>

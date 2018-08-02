@@ -25,6 +25,11 @@
         $(document).ready(function() {
          $('#tables').DataTable();
         } );
+        // SET INPUT TYPE FROM CUSTOM RANGE
+        function updateTextInput(val) {
+        document.getElementById('jumlahcuti').value=val; 
+       }
     </script>
+    
 </body>
 </html>

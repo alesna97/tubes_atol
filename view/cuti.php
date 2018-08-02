@@ -55,14 +55,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="jumlah_cuti">Jumlah Cuti :</label>
-                                                        <input type="range" min="0" max="4" class="custom-range" id="jumlah_cuti" name="jumlah_cuti" onchange="updateTextInput(this.value);">
-                                                        <input type="text" name="jumlah_cuti" class="form-control" id="jumlahcuti" value="<?= $fetchCuti['jumlah_cuti'] ?>">
-                                                        <!-- SET INPUT TYPE FROM CUSTOM RANGE -->
-                                                        <script type="text/javascript">
-                                                             function updateTextInput(val) {
-                                                                document.getElementById('jumlahcuti').value=val; 
-                                                             }
-                                                        </script>
+                                                        <input type="number" name="jumlah_cuti" min="0" max="4" class="form-control" id="jumlahcuti" value="<?= $fetchCuti['jumlah_cuti'] ?>">
                                                     </div>
                                                     <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_simpan_cuti">Simpan</button>
                                                 </form>

@@ -109,16 +109,12 @@
                 <div class="col">
                  <!-- FUNGSI CHART -->
                         <?php
-                        $sql = "SELECT nama_jabatan, COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan GROUP BY pegawai.id_jabatan";
+                            $sql = "SELECT COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan GROUP BY pegawai.id_jabatan";
                             $res = mysqli_query($conn, $sql);
-                                while ($fetchdata = mysqli_fetch_array($res)) { ?>
-                                 <div><?php $fetchdata["nama_jabatan"];?></div>
-                                 <div><?php $fetchdata["jumlah"];?></div>
-                        <?php } ?>
-
+                            
+                            ?>
                     <script type="text/javascript">
                         window.onload = function () {
-
                         var chart = new CanvasJS.Chart("chartContainer", {
                             theme: "light2", // "light2", "dark1", "dark2"
                             animationEnabled: true, // change to true      
@@ -146,14 +142,14 @@
                                                     “pie”
                                                     “doughnut”
                                 */
-                                type: "doughnut",
+                                type: "splineArea",
                                 dataPoints: [
-                                    { label: "CEO",  y: 10  },
-                                    { label: "Director", y: 15  },
-                                    { label: "Store Manager", y: 25  },
-                                    { label: "Asisten Manager",  y: 30  },
-                                    { label: "Supervisor",  y: 30  },
-                                    { label: "Staff",  y: 28  }
+                                    { label: "CEO",  y: 3  },
+                                    { label: "Director", y: 2  },
+                                    { label: "Store Manager", y: 5  },
+                                    { label: "Asisten Manager",  y: 6  },
+                                    { label: "Supervisor",  y: 4 },
+                                    { label: "Staff",  y: 8  }
                                 ]
                             }
                             ]
@@ -165,8 +161,6 @@
                     <div class="card">
                     <div id="chartContainer" style="height: 250px; width: 100%;"></div>
                     </div>
-                </div>
-                <div class="col">
                 </div>
             </div>
         </div>

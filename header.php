@@ -84,10 +84,10 @@
                                     </div>
                                 </form>
                             </li>
-                        </ul>
-                         </div>
-                        </div>
+                         </ul>
+                       </div>
                     </div>
-                </nav>  
+                </div>
+            </nav>  
                     <!-- CONTENT BODY -->
                     

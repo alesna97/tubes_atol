@@ -14,47 +14,7 @@
                         
                 </div>
                 <div class="col">
-                    <div class=" text-right">
-                    <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#addData">
-                            <div class="small"><img src="../asset/icons/icons8_Plus_Math_24px.png" class="icn-15"> Tambah</div>
-                        </button></div>
-                            <!-- ADD DATA -->
-                                    <div class="modal fade" id="addData">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"> Tambah Data Cuti </h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="" name="" method="POST">
-                                                    <div class="form-group">
-                                                        <label for="nama">Nama Pegawai :</label>
-                                                        <select name="nama_pegawai" class="custom-select">
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                                <option> dummy </option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Jumlah Cuti :</label>
-                                                        <input type="text" name="jumlah_cuti" class="form-control" id="nama">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Kuota cuti :</label>
-                                                        <input type="range" min="0" max="4" value="0" class="custom-range" id="jumlah_cuti" name="jumlah_cuti" onchange="updateTextInput(this.value);">
-                                                        <input type="text" name="jumlah_cuti" class="form-control" id="jumlahcuti" value="0">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_cuti">Submit</button>
-                                                    <button type="reset" class="btn btn-secondary btn-rounded btn-primary btn-block" >Reset</button>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-block btn-rounded btn-danger" data-dismiss="modal">Tutup</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    
                 </div>
             </div>
         <div class="row">
@@ -96,7 +56,7 @@
                                                     <div class="form-group">
                                                         <label for="jumlah_cuti">Jumlah Cuti :</label>
                                                         <input type="range" min="0" max="4" class="custom-range" id="jumlah_cuti" name="jumlah_cuti" onchange="updateTextInput(this.value);">
-                                                        <input type="text" name="jumlah_cuti" class="form-control" id="jumlahcuti" value="<?= $fetchCuti['jumlah_cuti'] ?> ">
+                                                        <input type="text" name="jumlah_cuti" class="form-control" id="jumlahcuti" value="<?= $fetchCuti['jumlah_cuti'] ?>">
                                                         <!-- SET INPUT TYPE FROM CUSTOM RANGE -->
                                                         <script type="text/javascript">
                                                              function updateTextInput(val) {

@@ -20,6 +20,7 @@ if (isset($_POST['btn_tambah_pegawai'])) {
             echo '<script>window.alert("Maaf, email tidak valid");window.location=("../view/pegawai.php.php");</script>'; 
         } else {
             //Insert Data
+            //inser juga
             $sql = "INSERT INTO pegawai 
             VALUES ('$id_pegawai', '$id_jabatan', '$nama_pegawai', '$tgl_lahir', '$jk', '$no_hp', '$email', '$alamat');";
             mysqli_query($conn, $sql);

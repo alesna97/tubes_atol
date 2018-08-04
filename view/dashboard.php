@@ -109,12 +109,35 @@
                 <div class="col">
                  <!-- FUNGSI CHART -->
                         <?php
-                            $sql = "SELECT COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan GROUP BY pegawai.id_jabatan";
-                            $res = mysqli_query($conn, $sql);
+                            $sqlJabatan1 = "SELECT jabatan.id_jabatan,COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan AND jabatan.id_jabatan = 'J1' GROUP BY pegawai.id_jabatan";
+                            $sqlJabatan2 = "SELECT jabatan.id_jabatan,COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan AND jabatan.id_jabatan = 'J2' GROUP BY pegawai.id_jabatan";
+                            $sqlJabatan3 = "SELECT jabatan.id_jabatan,COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan AND jabatan.id_jabatan = 'J3' GROUP BY pegawai.id_jabatan";
+                            $sqlJabatan4 = "SELECT jabatan.id_jabatan,COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan AND jabatan.id_jabatan = 'J4' GROUP BY pegawai.id_jabatan";
+                            $sqlJabatan5 = "SELECT jabatan.id_jabatan,COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan AND jabatan.id_jabatan = 'J5' GROUP BY pegawai.id_jabatan";
+                            $sqlJabatan6 = "SELECT jabatan.id_jabatan,COUNT(*) as jumlah FROM pegawai JOIN jabatan WHERE jabatan.id_jabatan=pegawai.id_jabatan AND jabatan.id_jabatan = 'J6' GROUP BY pegawai.id_jabatan";
+                            $res1 = mysqli_query($conn, $sqlJabatan1);
+                            $res2 = mysqli_query($conn, $sqlJabatan2);
+                            $res3 = mysqli_query($conn, $sqlJabatan3);
+                            $res4 = mysqli_query($conn, $sqlJabatan4);
+                            $res5 = mysqli_query($conn, $sqlJabatan5);
+                            $res6 = mysqli_query($conn, $sqlJabatan6);
+                            $getJabatan1=mysqli_fetch_array($res1);
+                            $getJabatan2=mysqli_fetch_array($res2);
+                            $getJabatan3=mysqli_fetch_array($res3);
+                            $getJabatan4=mysqli_fetch_array($res4);
+                            $getJabatan5=mysqli_fetch_array($res5);
+                            $getJabatan6=mysqli_fetch_array($res6);
                             
-                            ?>
+                            ?> 
+
                     <script type="text/javascript">
                         window.onload = function () {
+                        var jabatan1 = <?php echo $getJabatan1['jumlah']; ?>;
+                        var jabatan2 = <?php echo $getJabatan2['jumlah']; ?>;
+                        var jabatan3 = <?php echo $getJabatan3['jumlah']; ?>;
+                        var jabatan4 = <?php echo $getJabatan4['jumlah']; ?>;
+                        var jabatan5 = <?php echo $getJabatan5['jumlah']; ?>;
+                        var jabatan6 = <?php echo $getJabatan6['jumlah']; ?>;
                         var chart = new CanvasJS.Chart("chartContainer", {
                             theme: "light2", // "light2", "dark1", "dark2"
                             animationEnabled: true, // change to true      
@@ -127,12 +150,12 @@
                                 */
                                 type: "splineArea",
                                 dataPoints: [
-                                    { label: "CEO",  y: 1  },
-                                    { label: "Director", y: 1  },
-                                    { label: "Store Manager", y: 1  },
-                                    { label: "Asisten Manager",  y: 1  },
-                                    { label: "Supervisor",  y: 1 },
-                                    { label: "Staff",  y: 4  }
+                                    { label: "CEO",  y: jabatan1},
+                                    { label: "Director", y: jabatan2 },
+                                    { label: "Store Manager", y: jabatan3  },
+                                    { label: "Asisten Manager",  y: jabatan4  },
+                                    { label: "Supervisor",  y: jabatan5 },
+                                    { label: "Staff",  y: jabatan6  }
                                 ]
                             }
                             ]
@@ -144,6 +167,7 @@
                     <div class="card">
                     <div id="chartContainer" style="height: 250px; width: 100%;"></div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

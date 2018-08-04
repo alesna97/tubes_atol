@@ -24,6 +24,10 @@ if (isset($_POST['btn_tambah_pegawai'])) {
             $sql = "INSERT INTO pegawai 
             VALUES ('$id_pegawai', '$id_jabatan', '$nama_pegawai', '$tgl_lahir', '$jk', '$no_hp', '$email', '$alamat');";
             mysqli_query($conn, $sql);
+            
+            $sql = "INSERT INTO gaji 
+            VALUES (DEFAULT, '$id_pegawai', '$id_jabatan', 0);";
+            mysqli_query($conn, $sql);
 
             $sql = "INSERT INTO cuti 
             VALUES (DEFAULT, '$id_pegawai', 0, 4);";

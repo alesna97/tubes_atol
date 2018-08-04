@@ -27,11 +27,11 @@
                                                 <form action="../function/function_pegawai.php" name="" method="POST">
                                                     <div class="form-group">
                                                         <label for="nama">ID :</label>
-                                                        <input type="text" name="id_pegawai" class="form-control" id="id">
+                                                        <input type="text" name="id_pegawai" class="form-control" id="id" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama">Nama :</label>
-                                                        <input type="text" name="nama_pegawai" class="form-control" id="nama">
+                                                        <input type="text" name="nama_pegawai" class="form-control" id="nama" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama">Jabatan :</label>
@@ -47,7 +47,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama">Tanggal Lahir :</label>
-                                                        <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir">
+                                                        <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" required>
                                                     </div>
                                                     <label for="jenis_kelamin">Jenis Kelamin :</label>
                                                     <div class="form-check">
@@ -62,15 +62,15 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="no_hp">No Hp :</label>
-                                                        <input type="text" name="no_hp" class="form-control" id="no_hp">
+                                                        <input type="text" name="no_hp" class="form-control" id="no_hp" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="email">Email :</label>
-                                                        <input type="text" name="email" class="form-control" id="email">
+                                                        <input type="text" name="email" class="form-control" id="email" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="alamat">Alamat :</label>
-                                                        <input type="text" name="alamat" class="form-control" id="alamat">
+                                                        <input type="text" name="alamat" class="form-control" id="alamat" required>
                                                     </div>
                                                     <button type="Submit" class="btn btn-rounded btn-primary btn-block" name="btn_tambah_pegawai">Submit</button>
                                                     <button type="reset" class="btn btn-secondary btn-rounded btn-primary btn-block" >Reset</button>

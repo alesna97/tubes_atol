@@ -1,0 +1,1 @@
+[03-Aug-2018 02:58:28 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kertasde/public_html/config/conn_db.php on line 7

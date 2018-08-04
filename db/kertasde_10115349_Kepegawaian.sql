@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 02, 2018 at 08:28 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Host: localhost:3306
+-- Generation Time: Aug 04, 2018 at 11:10 AM
+-- Server version: 10.2.16-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `10115349_kepegawaian`
+-- Database: `kertasde_10115349_Kepegawaian`
 --
 
 -- --------------------------------------------------------
@@ -71,7 +71,14 @@ INSERT INTO `cuti` (`id_cuti`, `id_pegawai`, `jumlah_cuti`, `kuota_cuti`) VALUES
 (9, 'P08', 4, 0),
 (10, 'P09', 0, 4),
 (11, 'P10', 2, 2),
-(18, 'P11', 0, 4);
+(18, 'P11', 0, 4),
+(19, 'P12', 0, 4),
+(20, 'P13', 0, 4),
+(21, 'P14', 0, 4),
+(22, 'P15', 0, 4),
+(31, 'P16', 0, 4),
+(43, 'P17', 0, 4),
+(45, 'P18', 0, 4);
 
 -- --------------------------------------------------------
 
@@ -91,17 +98,24 @@ CREATE TABLE `gaji` (
 --
 
 INSERT INTO `gaji` (`id_gaji`, `id_pegawai`, `id_jabatan`, `total_gaji`) VALUES
+(0, 'P16', 'J6', 2100000),
 (1, 'P01', 'J1', 12175000),
 (2, 'P02', 'J4', 4735000),
-(3, 'P03', 'J3', 5200000),
+(3, 'P03', 'J3', 5300000),
 (4, 'P04', 'J2', 7100000),
 (5, 'P05', 'J5', 3465000),
-(6, 'P06', 'J6', 2100000),
+(6, 'P06', 'J6', 2115000),
 (7, 'P07', 'J6', 2335000),
-(8, 'P08', 'J6', 3475000),
-(9, 'P09', 'J6', 3600000),
-(10, 'P10', 'J5', 3250000),
-(22, 'P11', 'J6', 2120000);
+(8, 'P08', 'J6', 2100000),
+(9, 'P09', 'J6', 2350000),
+(10, 'P10', 'J5', 3275000),
+(11, 'P17', 'J6', 2100000),
+(22, 'P11', 'J6', 2120000),
+(23, 'P12', 'J6', 2100000),
+(24, 'P13', 'J6', 2100000),
+(25, 'P14', 'J6', 2100000),
+(26, 'P15', 'J6', 2100000),
+(28, 'P18', 'J4', 4400000);
 
 -- --------------------------------------------------------
 
@@ -146,15 +160,22 @@ CREATE TABLE `lembur` (
 INSERT INTO `lembur` (`id_lembur`, `id_pegawai`, `jumlah_jam_lembur`) VALUES
 (1, 'P01', 20),
 (2, 'P02', 67),
-(3, 'P03', 0),
+(3, 'P03', 20),
 (4, 'P04', 0),
 (5, 'P05', 33),
-(6, 'P06', 0),
+(6, 'P06', 3),
 (7, 'P07', 47),
-(8, 'P08', 295),
-(9, 'P09', 300),
-(10, 'P10', 0),
-(11, 'P11', 4);
+(8, 'P08', 20),
+(9, 'P09', 50),
+(10, 'P10', 5),
+(11, 'P11', 4),
+(12, 'P12', 0),
+(13, 'P13', 0),
+(14, 'P14', 0),
+(15, 'P15', 0),
+(23, 'P16', 0),
+(34, 'P17', 0),
+(36, 'P18', 0);
 
 -- --------------------------------------------------------
 
@@ -167,7 +188,7 @@ CREATE TABLE `pegawai` (
   `id_jabatan` varchar(5) NOT NULL,
   `nama_pegawai` varchar(30) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `jenis_kelamin` varchar(10) NOT NULL,
+  `jenis_kelamin` varchar(15) NOT NULL,
   `no_hp` varchar(13) NOT NULL,
   `email` varchar(30) NOT NULL,
   `alamat` text NOT NULL
@@ -188,30 +209,14 @@ INSERT INTO `pegawai` (`id_pegawai`, `id_jabatan`, `nama_pegawai`, `tanggal_lahi
 ('P08', 'J6', 'Atticus Dennis', '1997-03-24', 'Laki-Laki', '087436356547', 'atticusdennis@outlook.com', 'Jl. Sekeloa Selatan No. 900'),
 ('P09', 'J6', 'Fikri Fatoni', '1997-01-15', 'Laki-Laki', '081931390150', 'tbfikrif@gmail.com', 'Bandung'),
 ('P10', 'J5', 'Vantam Nito', '1999-03-18', 'Laki-Laki', '+628193139015', 'vantamnito@gmail.com', 'Dago'),
-('P11', 'J6', 'Vantam Nitosss', '1998-06-15', 'Perempuan', '+628193139015', 'tbfikrif@gmail.com', 'Bandung');
-
---
--- Triggers `pegawai`
---
-DELIMITER $$
-CREATE TRIGGER `trig_hapus_pegawai` AFTER DELETE ON `pegawai` FOR EACH ROW DELETE FROM gaji
-WHERE gaji.id_pegawai = OLD.id_pegawai
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `trig_tambah_pegawai` AFTER INSERT ON `pegawai` FOR EACH ROW INSERT INTO gaji
-VALUES (DEFAULT,
-        NEW.id_pegawai,
-        NEW.id_jabatan,
-        0)
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `trig_ubah_pegawai` AFTER UPDATE ON `pegawai` FOR EACH ROW UPDATE gaji
-SET id_jabatan = NEW.id_jabatan
-WHERE id_pegawai = OLD.id_pegawai
-$$
-DELIMITER ;
+('P11', 'J6', 'Vandeck', '1998-06-15', 'Perempuan', '0828193139015', 'tbfikrif@gmail.com', 'Bandung'),
+('P12', 'J6', 'Syam Siyah', '1899-03-06', 'Perempuan', '+628193139015', 'tbfikrif@gmail.com', 'Kota Bandung'),
+('P13', 'J6', 'Tania Karisma', '1999-12-15', 'Perempuan', '+628193139015', 'tbfikrif@gmail.com', 'Kota Bandung'),
+('P14', 'J6', 'Atticus Anis', '1899-12-15', 'Perempuan', '+628193139015', 'tbfikrif@gmail.com', 'Kota Bandung'),
+('P15', 'J6', 'Singgalang', '1998-06-05', 'Laki-Laki', '+628193139015', 'tbfikrif@gmail.com', 'Kota Bandung'),
+('P16', 'J6', 'Rio Niba', '1999-08-19', 'Laki-Laki', '08193139015', 'tbfikrif@gmail.com', 'Bandung'),
+('P17', 'J6', 'Nam Min Ho', '1998-01-18', 'Laki-Laki', '081931390150', 'alesna97@gmail.com', 'pungkur 34'),
+('P18', 'J4', 'Siti H', '1989-03-02', 'Laki - Laki', '082129271', 'siti@gmail.com', 'dago asri no 2');
 
 --
 -- Indexes for dumped tables
@@ -266,19 +271,19 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `cuti`
 --
 ALTER TABLE `cuti`
-  MODIFY `id_cuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_cuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `gaji`
 --
 ALTER TABLE `gaji`
-  MODIFY `id_gaji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_gaji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `lembur`
 --
 ALTER TABLE `lembur`
-  MODIFY `id_lembur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_lembur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Constraints for dumped tables

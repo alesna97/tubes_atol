@@ -10,12 +10,12 @@
 			$check = mysqli_num_rows($res);
 
 			if ($check>0){
-				$sql = "UPDATE admin SET password = '$passbaru' WHERE username = 'admin_almanac'";
+				$sql = "UPDATE admin SET password = '$passbaru' WHERE username = 'admin1'";
 				$new_res = mysqli_query($conn,$sql);
-				echo "Password Berhasil di ubah";
+				echo '<script>window.alert("Password Berhasil diubah.");window.location=("../view/dashboard.php");</script>';
 			}else{
 				//echo "GAGAL LOGIN !";
-				echo "password salah";
+				echo '<script>window.alert("Password Lama Tidak sesuai.");window.location=("../view/dashboard.php");</script>';
 			}
 		}
 ?>

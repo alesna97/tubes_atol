@@ -129,7 +129,6 @@
                             $getJabatan6=mysqli_fetch_array($res6);
                             
                             ?> 
-
                     <script type="text/javascript">
                         window.onload = function () {
                         var jabatan1 = <?php echo $getJabatan1['jumlah']; ?>;
@@ -171,8 +170,7 @@
                 </div>
             </div>
         </div>
-    </div>
-	
+    </div>	
 <?php
 	include_once "../footer.php";
 ?>

@@ -22,7 +22,7 @@
             });
         });
 
-        //dataTables test
+        //dataTables test ngebray
         $(document).ready(function() {
          $('#tables').DataTable();
         } );

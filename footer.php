@@ -22,11 +22,12 @@
             });
         });
 
-        //dataTables
+        //dataTables test
         $(document).ready(function() {
          $('#tables').DataTable();
         } );
     </script>
+    
     
 </body>
 </html>
